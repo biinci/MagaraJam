@@ -450,10 +450,6 @@ namespace binc.PixelAnimator.Editor.Window{
         private void SetPropertyField(PropertyWay propWay, SerializedProperty propertyValues, BaseData baseData, int index){
             propertyValues.serializedObject.Update();
             var alreadyExist = baseData != null;
-            if (alreadyExist) {
-                var propertyValue = propertyValues.GetArrayElementAtIndex(index);
-                var propBaseData = propertyValue.FindPropertyRelative("baseData");
-            }
             using(new GUILayout.HorizontalScope()){
                 EditorGUILayout.LabelField(propWay.mainProperty.Name, GUILayout.MaxWidth(100));
                 
@@ -611,8 +607,7 @@ namespace binc.PixelAnimator.Editor.Window{
                     DrawLayer();
                     SetFrames();
                     SetLayerMenu();
-                    // SetFrameCopyPaste();
-                        
+
                 }
             }
 
@@ -625,8 +620,8 @@ namespace binc.PixelAnimator.Editor.Window{
             else playT = (Texture2D)AssetDatabase.LoadAssetAtPath(ResourcesPath + "Playing.png", typeof(Texture2D));
             using(new GUILayout.HorizontalScope()){
 
-                if(PixelAnimatorUtility.Button(defAddGroupsT, onMouseAddGroupsT, addGroupsRect )){
-                    if(boxTypePopup != null) boxTypePopup.ShowAsContext();
+                if(PixelAnimatorUtility.Button(defAddGroupsT, onMouseAddGroupsT, addGroupsRect )) {
+                    boxTypePopup?.ShowAsContext();
                 }
                 else if(PixelAnimatorUtility.Button(backT, backRect)) {
                     if (selectedAnimation == null) return;
@@ -715,14 +710,16 @@ namespace binc.PixelAnimator.Editor.Window{
             var eventCurrent = Event.current;
             
             greatestSpriteSize = GetGreatestSpriteSize();
-
+            if (yLineRect.Length != selectedAnimation.GetSpriteList().Count) {
+                yLineRect = new Rect[selectedAnimation.GetSpriteList().Count];
+            }
             // First y axis line rect
             yLineRect[0] = new Rect(yLayoutLine.xMax + greatestSpriteSize.x, 10, 5, greatestSpriteSize.y + xLayoutLine.height);
             for(var i = 0; i < selectedAnimation.GetSpriteList().Count; i++){
                 if(i>0 && i != yLineRect.Length-1)
                     yLineRect[i] = new Rect(yLineRect[i-1].xMax + greatestSpriteSize.x, 10, 5, greatestSpriteSize.y + xLayoutLine.height);
 
-                if (i == yLineRect.Length - 1)
+                if (i == yLineRect.Length - 1 && yLineRect.Length != 1)
                     yLineRect[i] = new Rect(yLineRect[i - 1].xMax + greatestSpriteSize.x, 10, 5,
                         greatestSpriteSize.y + xLayoutLine.height + (selectedAnimation.Layers.Count * 45));
                     

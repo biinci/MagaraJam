@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: Npc-Walk
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: e2cf2306ab9e99d4fa93e454851b2a34
+    sprite: {fileID: -1403872864, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: 90e0a614779564e42bd89460c39c39df
+    sprite: {fileID: 1493645160, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: a0e145716ca6be644826f8d4c911dbad
+    sprite: {fileID: -1856724631, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: 5e39694f6e56049418ef82cd2569c657
+    sprite: {fileID: 506578637, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: 9739abe6443dfd641a6b06a4dd4ae749
+    sprite: {fileID: -1173222302, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: 56c7a41922b864e40bcdaed63ad90722
+    sprite: {fileID: 922854230, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  - SpriteId: 046f1528d7217bd46bb33f32f3c2968b
+    sprite: {fileID: -838346299, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
+  layers:
+  - frames:
+    - SpriteId: e2cf2306ab9e99d4fa93e454851b2a34
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: 90e0a614779564e42bd89460c39c39df
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: a0e145716ca6be644826f8d4c911dbad
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: 5e39694f6e56049418ef82cd2569c657
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: 9739abe6443dfd641a6b06a4dd4ae749
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: 56c7a41922b864e40bcdaed63ad90722
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    - SpriteId: 046f1528d7217bd46bb33f32f3c2968b
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 28
+        y: 19
+        width: 7
+        height: 27
+    activeBox: 1
+    onHandleTopLeft: 0
+    onHandleTopCenter: 0
+    onHandleTopRight: 0
+    onHandleRightCenter: 0
+    onHandleBottomRight: 0
+    onHandleBottomCenter: 0
+    onHandleBottomLeft: 0
+    onHandleLeftCenter: 0
+    onMiddle: 0
+    guid: 10f22ec938d36e246814b963f3cae43b
+  references:
+    version: 2
+    RefIds: []

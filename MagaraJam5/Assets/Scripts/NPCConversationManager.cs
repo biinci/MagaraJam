@@ -4,48 +4,47 @@ using UnityEngine;
 
 public class NPCConversationManager : MonoBehaviour
 {
-    public static NPCConversationManager Instance;
+    public static NPCConversationManager Instance{ get; private set; }
     private void Awake()
     {
         Instance = this;
     }
-    private List<Conversation> conversations = new List<Conversation>();
-    public void MakeInterractionWith(NPCManager from, NPCManager to)
+    private readonly List<Conversation> conversations = new();
+    public void MakeInteractionWith(NPCManager from, NPCManager to)
     {
         from.OnStartConversation();
 
-        int conversationIndex = conversations.FindIndex(x => x.Members.Contains(to));
+        var conversationIndex = conversations.FindIndex(x => x.members.Contains(to));
         if (conversationIndex != -1)
         {
-            conversations[conversationIndex].Members.Add(from);
+            conversations[conversationIndex].members.Add(from);
         }
         else
         {
             conversations.Add(new Conversation(from, to));
         }
     }
-    class Conversation
+    private class Conversation
     {
-        public List<NPCManager> Members = new List<NPCManager>();
+        public readonly List<NPCManager> members = new();
         public Conversation(params NPCManager[] firstMembers)
         {
-            Debug.Log("Diyalog başladı");
             foreach (var member in firstMembers)
             {
-                Members.Add(member);
+                members.Add(member);
             }
-            NPCConversationManager.Instance.StartCoroutine(ConversationCoroutine());
+            Instance.StartCoroutine(ConversationCoroutine());
         }
-        IEnumerator ConversationCoroutine()
+        private IEnumerator ConversationCoroutine()
         {
             yield return new WaitForSeconds(10);
-            for (int i = 0; i < Members.Count; i++)
+            for (var i = 0; i < members.Count; i++)
             {
-                Members[i].OnEndConversation(i % 2 == 0 ? Direction.right : Direction.left);
-                Debug.Log(Members[i].name);
+                members[i].OnEndConversation(i % 2 == 0 ? Direction.right : Direction.left);
+                Debug.Log(members[i].name);
                 yield return new WaitForSeconds(0.7f);
             }
-            NPCConversationManager.Instance.conversations.Remove(this);
+            Instance.conversations.Remove(this);
         }
     }
 }

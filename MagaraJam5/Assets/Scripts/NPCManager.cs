@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using binc.PixelAnimator;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class NPCManager : MonoBehaviour
@@ -9,72 +12,111 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private float _interractDistance;
     [SerializeField] private LayerMask _interractLayer;
 
-    public bool LeaveCooldown;
+    [SerializeField] private bool leaveCooldown;
+    public bool LeaveCooldown => leaveCooldown;
 
-    Rigidbody2D _rb;
-    Direction _currentDirection;
-    Coroutine _directionDecider;
+    private Rigidbody2D _rb;
+    [SerializeField] private AnimationManager anim;
+
+    [SerializeField] private PixelAnimation walk, idle, to;
+
+    private Direction currentDirection;
+    private Direction CurrentDirection{
+        get => currentDirection;
+        set{
+            anim.ChangeAnimation(to);
+            currentDirection = value;
+        }
+    }
+
+    private Coroutine _directionDecider;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _currentDirection = (Direction)Random.Range(-1, 2);
+        CurrentDirection = (Direction)Random.Range(-1, 2);
 
         _directionDecider = StartCoroutine(DirectionDeciderCoroutine());
+        anim.ChangeAnimation(idle);
+        anim.AddListener("To", () => {
+            //Sert bir gecis olmasin diye to animasyonu ekledim.
+            switch (CurrentDirection) {
+                case Direction.left or Direction.right:
+                    anim.ChangeAnimation(walk);
+                    break;
+                case Direction.none:
+                    anim.ChangeAnimation(idle);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        });
     }
     private void Update()
     {
-        _rb.velocity = new Vector2((int)_currentDirection * _speed, _rb.velocity.y);
-
-        if (_currentDirection != Direction.none && LeaveCooldown == false)
+        if (CurrentDirection != Direction.none && LeaveCooldown == false)
         {
-            Collider2D[] npcCols = Physics2D.OverlapCircleAll(transform.position, _interractDistance, _interractLayer);
-            foreach (var col in npcCols)
-            {
+            var npcCols = Physics2D.OverlapCircleAll(transform.position, _interractDistance, _interractLayer);
+            foreach (var col in npcCols) {
+                //Animatorun collideri olup olmadigini kontrol editorum.
+                if (col.GetComponent<NPCManager>() == null) continue;
                 if (col.transform == this.transform) continue;
-                if (col.GetComponent<NPCManager>().LeaveCooldown == true) continue;
+                if (col.GetComponent<NPCManager>().LeaveCooldown) continue;
 
-                NPCConversationManager.Instance.MakeInterractionWith(this, col.GetComponent<NPCManager>());
+                NPCConversationManager.Instance.MakeInteractionWith(this, col.GetComponent<NPCManager>());
                 break;
             }
         }
+        
     }
-    IEnumerator DirectionDeciderCoroutine()
+
+    private void FixedUpdate(){
+        _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
+        
+        if (_rb.velocity.x > 0) {
+            transform.rotation = Quaternion.Euler(0,0,0);
+        }else if (_rb.velocity.x < 0) {
+            transform.rotation = Quaternion.Euler(0,180,0);
+        }
+    }
+
+    private IEnumerator DirectionDeciderCoroutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(4, 10));
-            _currentDirection = Direction.none;
+            CurrentDirection = Direction.none;
             yield return new WaitForSeconds(1.5f);
-            _currentDirection = Random.Range(0, 2) == 0 ? Direction.left : Direction.right;
+            CurrentDirection = Random.Range(0, 2) == 0 ? Direction.left : Direction.right;
 
         }
     }
     public void OnStartConversation()
     {
         StopCoroutine(_directionDecider);
-        _currentDirection = Direction.none;
+        CurrentDirection = Direction.none;
 
     }
     public void OnEndConversation(Direction endDirection)
     {
-        _currentDirection = endDirection;
+        CurrentDirection = endDirection;
         _directionDecider = StartCoroutine(DirectionDeciderCoroutine());
 
         StartCoroutine(CooldownCoroutine());
     }
-    IEnumerator CooldownCoroutine()
+
+    private IEnumerator CooldownCoroutine()
     {
-        LeaveCooldown = true;
+        leaveCooldown = true;
         yield return new WaitForSeconds(3);
-        LeaveCooldown = false;
+        leaveCooldown = false;
     }
-    private Vector2 CurrentDirectionToVector => _currentDirection switch
+    private Vector2 CurrentDirectionToVector => CurrentDirection switch
     {
         Direction.left => -Vector2.right,
         Direction.right => Vector2.right,
         _ => Vector2.zero
     };
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
