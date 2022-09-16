@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a52e469a93165d428907081d5b17325, type: 3}
   m_Name: PixelAnimatorPreferences
   m_EditorClassIdentifier: 
-  spriteProperties: []
+  spriteProperties:
+  - mainProperty:
+      rid: 7165746354485723136
+    propertyType: 0
   hitBoxProperties:
   - mainProperty:
       rid: 7165746126855340118
@@ -56,3 +59,11 @@ MonoBehaviour:
         fourTransactions: 0
         guid: 6780d03d3e882d04482efab332b88806
         dataType: 0
+    - rid: 7165746354485723136
+      type: {class: ManuelProperty, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: 
+        sourceName: 
+        fourTransactions: 0
+        guid: 2ae9e5f8904a7a64e9d58013ee4abef0
+        dataType: 12
