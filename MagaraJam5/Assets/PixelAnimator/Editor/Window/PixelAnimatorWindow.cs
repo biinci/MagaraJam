@@ -118,8 +118,7 @@ namespace binc.PixelAnimator.Editor.Window{
 
 
         private void LoadInitResources(){
-            preferences = (PixelAnimatorPreferences)AssetDatabase.LoadAssetAtPath(
-                PixelAnimatorPath + "Preferences/PixelAnimatorPreferences.asset", typeof(PixelAnimatorPreferences));
+            preferences = Resources.Load<PixelAnimatorPreferences>("PixelAnimatorPreferences");
             backT = (Texture2D)AssetDatabase.LoadAssetAtPath(ResourcesPath + "Back.png", typeof(Texture2D)) ;
             frontT = (Texture2D)AssetDatabase.LoadAssetAtPath(ResourcesPath + "Front.png", typeof(Texture2D));
             defAddGroupsT = (Texture2D)AssetDatabase.LoadAssetAtPath(ResourcesPath + "AddBoxes.png", typeof(Texture2D));
@@ -211,7 +210,7 @@ namespace binc.PixelAnimator.Editor.Window{
         }
         
         private void CreateSpriteTexture(int windowID){
-            
+            SetPlayKeys();
             var activeSprite = selectedAnimation.GetSpriteList()[activeFrame];
             if (activeSprite == null) return;
             EditorGUI.DrawTextureTransparent(new Rect(0, 0, activeSprite.rect.width, activeSprite.rect.height), 
@@ -219,7 +218,7 @@ namespace binc.PixelAnimator.Editor.Window{
             AssetPreview.GetAssetPreview(activeSprite).filterMode = FilterMode.Point;
 
             
-            SetPlayKeys();
+            
             SetLayerKeys();
             SetBox();
         }
@@ -600,6 +599,7 @@ namespace binc.PixelAnimator.Editor.Window{
             
 
             DrawTimelineButtons();
+            SetPlayKeys();
             if (selectedAnimation == null) return;
             if (selectedAnimation.GetSpriteList().Count > 0) {
                 SetFrameThumbnail();
@@ -611,7 +611,7 @@ namespace binc.PixelAnimator.Editor.Window{
                 }
             }
 
-            SetPlayKeys();
+            
             SetLayerKeys();
         }
 

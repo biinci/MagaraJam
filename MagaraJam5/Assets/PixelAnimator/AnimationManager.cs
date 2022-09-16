@@ -6,10 +6,7 @@ using binc.PixelAnimator.Elements;
 using binc.PixelAnimator.Common;
 using binc.PixelAnimator.Preferences;
 using binc.PixelAnimator.Utility;
-using Unity.VisualScripting;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 
 
 namespace binc.PixelAnimator{
@@ -34,12 +31,11 @@ namespace binc.PixelAnimator{
 
         private readonly Dictionary<string, Action<object>> applyPropertyMethods = new();
         private List<Group> groups;
-
+        
+        
         private void Awake(){
-            #if UNITY_EDITOR
-            preferences = (PixelAnimatorPreferences)AssetDatabase.LoadAssetAtPath("Assets/PixelAnimator/Preferences/PixelAnimatorPreferences.asset", 
-                                                    typeof(PixelAnimatorPreferences));
-            #endif
+            preferences = Resources.Load<PixelAnimatorPreferences>("PixelAnimatorPreferences");
+
             baseObject = new GameObject("Pixel Animator Colliders"){
                 transform ={
                     parent = transform,

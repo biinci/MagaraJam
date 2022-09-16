@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2779545289439713697}
   - component: {fileID: 2779545289439713696}
   - component: {fileID: 2779545289439713703}
+  - component: {fileID: 8600034460888146446}
   - component: {fileID: 2779545289439713702}
-  - component: {fileID: 2857802677066027770}
   m_Layer: 6
   m_Name: NPC
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1258261425
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1403872864, guid: 9ed3918ef2ebb2342b10397466896ca9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,10 +106,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   leaveCooldown: 0
-  anim: {fileID: 2857802677066027770}
+  anim: {fileID: 8600034460888146446}
   walk: {fileID: 11400000, guid: 9d7aa62110a7b3441a5b39a04974ef49, type: 2}
   idle: {fileID: 11400000, guid: 46d099032df952742b5c5765d1f9147b, type: 2}
   to: {fileID: 11400000, guid: 787eafb629438aa4e9e121c2723618a1, type: 2}
+  punchOne: {fileID: 11400000, guid: cd59de5b66b60b7419c80b5db3f375c2, type: 2}
 --- !u!50 &2779545289439713703
 Rigidbody2D:
   serializedVersion: 4
@@ -131,6 +132,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8600034460888146446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779545289439713701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f86ae7691eb2864493e6cfd882d8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeFrame: 0
+  spriteRenderer: {fileID: 2779545289439713697}
+  gameObjects: []
 --- !u!61 &2779545289439713702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,18 +173,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16488981, y: 0.45015812}
   m_EdgeRadius: 0
---- !u!114 &2857802677066027770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2779545289439713701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f86ae7691eb2864493e6cfd882d8a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeFrame: 0
-  spriteRenderer: {fileID: 2779545289439713697}
-  gameObjects: []

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using binc.PixelAnimator;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -18,7 +17,7 @@ public class NPCManager : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private AnimationManager anim;
 
-    [SerializeField] private PixelAnimation walk, idle, to;
+    [SerializeField] private PixelAnimation walk, idle, to, punchOne;
 
     private Direction currentDirection;
     private Direction CurrentDirection{
@@ -36,20 +35,8 @@ public class NPCManager : MonoBehaviour
         CurrentDirection = (Direction)Random.Range(-1, 2);
 
         _directionDecider = StartCoroutine(DirectionDeciderCoroutine());
-        anim.ChangeAnimation(idle);
-        anim.AddListener("To", () => {
-            //Sert bir gecis olmasin diye to animasyonu ekledim.
-            switch (CurrentDirection) {
-                case Direction.left or Direction.right:
-                    anim.ChangeAnimation(walk);
-                    break;
-                case Direction.none:
-                    anim.ChangeAnimation(idle);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        });
+        SetAnimation();
+        anim.AddListener("To", SetAnimation);
     }
     private void Update()
     {
@@ -67,7 +54,15 @@ public class NPCManager : MonoBehaviour
             }
         }
         
+        if(Input.GetMouseButtonDown(0))
+        {
+            anim.ChangeAnimation(punchOne);
+        }
+        
+        
     }
+
+
 
     private void FixedUpdate(){
         _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
@@ -120,6 +115,21 @@ public class NPCManager : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
+
+    private void SetAnimation(){
+        switch (CurrentDirection) {
+            case Direction.left or Direction.right:
+                anim.ChangeAnimation(walk);
+                break;
+            case Direction.none:
+                anim.ChangeAnimation(idle);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+    
+    
 }
 public enum Direction
 {
