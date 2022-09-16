@@ -11,6 +11,8 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private float _interractDistance;
     [SerializeField] private LayerMask _interractLayer;
 
+    public GameObject enterNPCIcon;
+
     [SerializeField] private bool leaveCooldown;
     public bool LeaveCooldown => leaveCooldown;
 
@@ -20,9 +22,11 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private PixelAnimation walk, idle, to, punchOne;
 
     private Direction currentDirection;
-    private Direction CurrentDirection{
+    private Direction CurrentDirection
+    {
         get => currentDirection;
-        set{
+        set
+        {
             anim.ChangeAnimation(to);
             currentDirection = value;
         }
@@ -43,34 +47,32 @@ public class NPCManager : MonoBehaviour
         if (CurrentDirection != Direction.none && LeaveCooldown == false)
         {
             var npcCols = Physics2D.OverlapCircleAll(transform.position, _interractDistance, _interractLayer);
-            foreach (var col in npcCols) {
+            foreach (var col in npcCols)
+            {
                 //Animatorun collideri olup olmadigini kontrol editorum.
                 if (col.GetComponent<NPCManager>() == null) continue;
                 if (col.transform == this.transform) continue;
                 if (col.GetComponent<NPCManager>().LeaveCooldown) continue;
 
-                NPCConversationManager.Instance.MakeInteractionWith(this, col.GetComponent<NPCManager>());
+                NPCConversationManager.Instance.MakeConversationWith(this, col.GetComponent<NPCManager>());
                 break;
             }
         }
-        
-        if(Input.GetMouseButtonDown(0))
-        {
-            anim.ChangeAnimation(punchOne);
-        }
-        
-        
+
+        enterNPCIcon.SetActive(GhostManager.Instance.AvailableNPC == this);
     }
 
-
-
-    private void FixedUpdate(){
+    private void FixedUpdate()
+    {
         _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
-        
-        if (_rb.velocity.x > 0) {
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }else if (_rb.velocity.x < 0) {
-            transform.rotation = Quaternion.Euler(0,180,0);
+
+        if (_rb.velocity.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (_rb.velocity.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
@@ -116,8 +118,10 @@ public class NPCManager : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
 
-    private void SetAnimation(){
-        switch (CurrentDirection) {
+    private void SetAnimation()
+    {
+        switch (CurrentDirection)
+        {
             case Direction.left or Direction.right:
                 anim.ChangeAnimation(walk);
                 break;
@@ -128,8 +132,8 @@ public class NPCManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
-    
+
+
 }
 public enum Direction
 {

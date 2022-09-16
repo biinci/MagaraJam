@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NPCConversationManager : MonoBehaviour
 {
-    public static NPCConversationManager Instance{ get; private set; }
+    public static NPCConversationManager Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
     }
     private readonly List<Conversation> conversations = new();
-    public void MakeInteractionWith(NPCManager from, NPCManager to)
+    public void MakeConversationWith(NPCManager from, NPCManager to)
     {
         from.OnStartConversation();
 
@@ -22,6 +22,14 @@ public class NPCConversationManager : MonoBehaviour
         else
         {
             conversations.Add(new Conversation(from, to));
+        }
+    }
+    public void LeaveNPCFromConversation(NPCManager npc)
+    {
+        var conversationIndex = conversations.FindIndex(x => x.members.Contains(npc));
+        if (conversationIndex != -1)
+        {
+            conversations[conversationIndex].members.Remove(npc);
         }
     }
     private class Conversation

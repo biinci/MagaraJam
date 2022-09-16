@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Movement : MonoBehaviour
+public class GhostMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     Rigidbody2D rb;
