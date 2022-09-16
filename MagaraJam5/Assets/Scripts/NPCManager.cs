@@ -41,23 +41,29 @@ public class NPCManager : MonoBehaviour
     }
     private void Update()
     {
-        if (CurrentDirection != Direction.none && LeaveCooldown == false)
+        if (LeaveCooldown == false)
         {
-            var npcCols = Physics2D.OverlapCircleAll(transform.position, _interractDistance, _interractLayer);
-            foreach (var col in npcCols)
-            {
-                //Animatorun collideri olup olmadigini kontrol editorum.
-                if (col.GetComponent<NPCManager>() == null) continue;
-                if (col.transform == this.transform) continue;
-                if (col.GetComponent<NPCManager>().LeaveCooldown) continue;
-
-                NPCConversationManager.Instance.MakeConversationWith(this, col.GetComponent<NPCManager>());
-                break;
-            }
+            var closestNPC = GetClosestNpc();
+            if (closestNPC != null)
+                NPCConversationManager.Instance.MakeConversationWith(this, closestNPC);
         }
         CheckIcon();
         ChechkAnimations();
         CheckRotations();
+    }
+    private NPCManager GetClosestNpc()
+    {
+        var npcCols = Physics2D.OverlapCircleAll(transform.position, _interractDistance, _interractLayer);
+        foreach (var col in npcCols)
+        {
+            if (col.GetComponent<NPCManager>() == null) continue;
+            if (col.transform == this.transform) continue;
+            if (col.GetComponent<NPCManager>().LeaveCooldown) continue;
+
+            return col.GetComponent<NPCManager>();
+
+        }
+        return null;
     }
     public void ChechkAnimations()
     {
@@ -89,7 +95,20 @@ public class NPCManager : MonoBehaviour
     {
         _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
     }
-
+    private void SetAnimation()
+    {
+        switch (_rb.velocity.x)
+        {
+            case > 0 or < 0:
+                anim.ChangeAnimation(to);
+                anim.ChangeAnimation(walk);
+                break;
+            case 0:
+                anim.ChangeAnimation(to);
+                anim.ChangeAnimation(idle);
+                break;
+        }
+    }
     private IEnumerator DirectionDeciderCoroutine()
     {
         while (true)
@@ -119,32 +138,12 @@ public class NPCManager : MonoBehaviour
     {
         leaveCooldown = true;
         yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => GetClosestNpc() == null);
         leaveCooldown = false;
     }
-    private Vector2 CurrentDirectionToVector => CurrentDirection switch
-    {
-        Direction.left => -Vector2.right,
-        Direction.right => Vector2.right,
-        _ => Vector2.zero
-    };
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
-    }
-
-    private void SetAnimation()
-    {
-        switch (_rb.velocity.x)
-        {
-            case > 0 or < 0:
-                anim.ChangeAnimation(to);
-                anim.ChangeAnimation(walk);
-                break;
-            case 0:
-                anim.ChangeAnimation(to);
-                anim.ChangeAnimation(idle);
-                break;
-        }
     }
 
 

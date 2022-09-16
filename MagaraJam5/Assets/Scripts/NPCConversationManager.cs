@@ -12,6 +12,7 @@ public class NPCConversationManager : MonoBehaviour
     private readonly List<Conversation> conversations = new();
     public void MakeConversationWith(NPCManager from, NPCManager to)
     {
+        if (conversations.FindIndex(x => x.members.Contains(from)) != -1) return;
         from.OnStartConversation();
 
         var conversationIndex = conversations.FindIndex(x => x.members.Contains(to));
@@ -45,11 +46,10 @@ public class NPCConversationManager : MonoBehaviour
         }
         private IEnumerator ConversationCoroutine()
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(5);
             for (var i = 0; i < members.Count; i++)
             {
                 members[i].OnEndConversation(i % 2 == 0 ? Direction.right : Direction.left);
-                Debug.Log(members[i].name);
                 yield return new WaitForSeconds(0.7f);
             }
             Instance.conversations.Remove(this);
