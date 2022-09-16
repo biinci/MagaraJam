@@ -25,11 +25,7 @@ public class NPCManager : MonoBehaviour
     private Direction CurrentDirection
     {
         get => currentDirection;
-        set
-        {
-            anim.ChangeAnimation(to);
-            currentDirection = value;
-        }
+        set => currentDirection = value;
     }
 
     private Coroutine _directionDecider;
@@ -39,6 +35,7 @@ public class NPCManager : MonoBehaviour
         CurrentDirection = (Direction)Random.Range(-1, 2);
 
         _directionDecider = StartCoroutine(DirectionDeciderCoroutine());
+        
         SetAnimation();
         anim.AddListener("To", SetAnimation);
     }
@@ -60,6 +57,12 @@ public class NPCManager : MonoBehaviour
         }
 
         enterNPCIcon.SetActive(GhostManager.Instance.AvailableNPC == this);
+        if (Mathf.Abs(_rb.velocity.x) > 0 && anim.CurrentAnimation == idle) {
+            anim.ChangeAnimation(to);
+        }else if (_rb.velocity.x == 0 && anim.CurrentAnimation == walk) {
+            anim.ChangeAnimation(to);
+        }
+        
     }
 
     private void FixedUpdate()
@@ -120,16 +123,15 @@ public class NPCManager : MonoBehaviour
 
     private void SetAnimation()
     {
-        switch (CurrentDirection)
-        {
-            case Direction.left or Direction.right:
+        switch (_rb.velocity.x) {
+            case >0 or <0:
+                anim.ChangeAnimation(to);
                 anim.ChangeAnimation(walk);
                 break;
-            case Direction.none:
+            case 0:
+                anim.ChangeAnimation(to);
                 anim.ChangeAnimation(idle);
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
     }
 
