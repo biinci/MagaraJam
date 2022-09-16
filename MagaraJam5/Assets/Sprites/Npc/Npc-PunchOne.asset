@@ -31,7 +31,10 @@ MonoBehaviour:
   - frames:
     - SpriteId: 035ea8fedeed3d8419fa57fef1ed1f05
       hitBoxData: []
-      spriteData: []
+      spriteData:
+      - baseData:
+          rid: 7165746354485723145
+        dataType: 2
       spriteMethodNames: []
       hitBoxMethodNames: []
       colliderType: 0
@@ -79,7 +82,10 @@ MonoBehaviour:
         height: 28
     - SpriteId: dd2b90909f7e8ba4cbb9d044fad1fff3
       hitBoxData: []
-      spriteData: []
+      spriteData:
+      - baseData:
+          rid: 7165746354485723143
+        dataType: 2
       spriteMethodNames: []
       hitBoxMethodNames: []
       colliderType: 0
@@ -92,7 +98,8 @@ MonoBehaviour:
     - SpriteId: ef57c2b6888559f489e9b175e25c27e6
       hitBoxData: []
       spriteData: []
-      spriteMethodNames: []
+      spriteMethodNames:
+      - SetAnimation
       hitBoxMethodNames: []
       colliderType: 0
       hitBoxRect:
@@ -114,4 +121,16 @@ MonoBehaviour:
     guid: 10f22ec938d36e246814b963f3cae43b
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7165746354485723143
+      type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: CanMove
+        guid: 567ff840260fac547a0c35d5b566ffe1
+        data: 1
+    - rid: 7165746354485723145
+      type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: CanMove
+        guid: 567ff840260fac547a0c35d5b566ffe1
+        data: 0

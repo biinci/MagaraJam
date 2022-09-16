@@ -449,11 +449,14 @@ namespace binc.PixelAnimator.Editor.Window{
         private void SetPropertyField(PropertyWay propWay, SerializedProperty propertyValues, BaseData baseData, int index){
             propertyValues.serializedObject.Update();
             var alreadyExist = baseData != null;
+            
             using(new GUILayout.HorizontalScope()){
                 EditorGUILayout.LabelField(propWay.mainProperty.Name, GUILayout.MaxWidth(100));
                 
 
                 if (alreadyExist) {
+                    var propData = propertyValues.GetArrayElementAtIndex(index).FindPropertyRelative("baseData").FindPropertyRelative("data");
+                    EditorGUILayout.PropertyField(propData, GUIContent.none);
                     propertyValues.serializedObject.ApplyModifiedProperties();
                 }
                 else {

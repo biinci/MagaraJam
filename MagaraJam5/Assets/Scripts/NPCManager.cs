@@ -17,9 +17,10 @@ public class NPCManager : MonoBehaviour
     public bool LeaveCooldown => leaveCooldown;
 
     private Rigidbody2D _rb;
-    [SerializeField] private AnimationManager anim;
+    public AnimationManager anim;
 
-    [SerializeField] private PixelAnimation walk, idle, to, punchOne;
+    public PixelAnimation walk, idle, to, punchOne;
+    public bool canMove = true;
 
     private Direction currentDirection;
     private Direction CurrentDirection
@@ -38,6 +39,11 @@ public class NPCManager : MonoBehaviour
 
         SetAnimation();
         anim.AddListener("To", SetAnimation);
+        anim.SetProperty("CanMove", o => {
+            Debug.Log((bool)o);
+            canMove = !(bool)o;
+        });
+        anim.AddListener("SetAnimation", SetAnimation);
     }
     private void Update()
     {
@@ -48,8 +54,9 @@ public class NPCManager : MonoBehaviour
                 NPCConversationManager.Instance.MakeConversationWith(this, closestNPC);
         }
         CheckIcon();
-        ChechkAnimations();
+        CheckAnimations();
         CheckRotations();
+
     }
     private NPCManager GetClosestNpc()
     {
@@ -65,8 +72,10 @@ public class NPCManager : MonoBehaviour
         }
         return null;
     }
-    public void ChechkAnimations()
+    public void CheckAnimations()
     {
+        if(anim.CurrentAnimation == punchOne) return;
+        
         if (Mathf.Abs(_rb.velocity.x) > 0 && anim.CurrentAnimation == idle)
         {
             anim.ChangeAnimation(to);
@@ -93,7 +102,8 @@ public class NPCManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
+        if(canMove)
+            _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
     }
     private void SetAnimation()
     {

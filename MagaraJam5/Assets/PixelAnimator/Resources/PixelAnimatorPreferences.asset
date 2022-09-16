@@ -62,8 +62,8 @@ MonoBehaviour:
     - rid: 7165746354485723136
       type: {class: ManuelProperty, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
-        name: 
+        name: CanMove
         sourceName: 
         fourTransactions: 0
-        guid: 2ae9e5f8904a7a64e9d58013ee4abef0
-        dataType: 12
+        guid: 567ff840260fac547a0c35d5b566ffe1
+        dataType: 2

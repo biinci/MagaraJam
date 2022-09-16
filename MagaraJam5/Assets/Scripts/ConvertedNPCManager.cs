@@ -12,7 +12,7 @@ public class ConvertedNPCManager : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().material.SetFloat(OutlineThickness, 1);
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
-
+        
         ghostManager = GhostManager.Instance;
         ghostManager.AvailableNPC = null;
         ghostManager.gameObject.SetActive(false);
@@ -24,13 +24,18 @@ public class ConvertedNPCManager : MonoBehaviour
     }
     private void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * nPCManager._speed, 0);
-        nPCManager.ChechkAnimations();
+        if(nPCManager.canMove)
+            GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * nPCManager._speed, 0);
+        nPCManager.CheckAnimations();
         nPCManager.CheckRotations();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             this.enabled = false;
+        }
+        
+        if (Input.GetMouseButtonDown(0)) {
+            nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
         }
     }
     private void OnDisable()
