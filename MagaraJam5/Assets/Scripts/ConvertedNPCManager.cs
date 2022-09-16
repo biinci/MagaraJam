@@ -9,15 +9,22 @@ public class ConvertedNPCManager : MonoBehaviour
     private void OnEnable()
     {
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
+
         ghostManager = GhostManager.Instance;
+        ghostManager.AvailableNPC = null;
         ghostManager.gameObject.SetActive(false);
 
         nPCManager = GetComponent<NPCManager>();
         NPCConversationManager.Instance.LeaveNPCFromConversation(nPCManager);
+        nPCManager.CheckIcon();
         nPCManager.enabled = false;
     }
     private void Update()
     {
+        GetComponent<Rigidbody2D>().velocity = new(Input.GetAxis("Horizontal") * nPCManager._speed, 0);
+        nPCManager.ChechkAnimations();
+        nPCManager.CheckRotations();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             this.enabled = false;

@@ -12,7 +12,7 @@ public class GhostManager : MonoBehaviour
     [SerializeField] private float enterNPCRadius;
     [SerializeField] private LayerMask NPCLayer;
 
-    public NPCManager AvailableNPC { get; private set; }
+    public NPCManager AvailableNPC { get; set; }
     private void Update()
     {
         AvailableNPC = FindAvailableNPC();
