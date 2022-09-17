@@ -31,6 +31,7 @@ public class NPCConversationManager : MonoBehaviour
         var conversationIndex = conversations.FindIndex(x => x.members.Contains(npc));
         if (conversationIndex != -1)
         {
+            npc.OnEndConversation(Direction.right);
             conversations[conversationIndex].members.Remove(npc);
         }
     }
