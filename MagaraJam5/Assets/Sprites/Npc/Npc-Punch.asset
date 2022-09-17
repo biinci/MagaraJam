@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
   m_Name: Npc-Punch
   m_EditorClassIdentifier: 
-  loop: 1
+  loop: 0
   frameRate: 12
   pixelSprites:
   - SpriteId: b1014ec8402068f4e9d3638adcf9536b
@@ -46,7 +46,10 @@ MonoBehaviour:
         height: 29
     - SpriteId: b413fdf6fb1234f43b5213f98cfc5a1e
       hitBoxData: []
-      spriteData: []
+      spriteData:
+      - baseData:
+          rid: 7165746366239997966
+        dataType: 12
       spriteMethodNames: []
       hitBoxMethodNames: []
       colliderType: 1
@@ -104,7 +107,7 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 18
         width: 8
         height: 29
@@ -134,3 +137,9 @@ MonoBehaviour:
         name: CanMove
         guid: 567ff840260fac547a0c35d5b566ffe1
         data: 1
+    - rid: 7165746366239997966
+      type: {class: Vector2Data, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: Velocity
+        guid: 5904c8f956f590b40af1ebff2df48a0a
+        data: {x: 1, y: 0}

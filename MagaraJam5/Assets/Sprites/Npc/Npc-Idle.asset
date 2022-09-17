@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
   m_Name: Npc-Idle
   m_EditorClassIdentifier: 
-  loop: 0
+  loop: 1
   frameRate: 12
   pixelSprites:
   - SpriteId: ffd965513f44015408383497f173c867

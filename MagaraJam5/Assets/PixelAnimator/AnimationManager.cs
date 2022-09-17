@@ -14,7 +14,8 @@ namespace binc.PixelAnimator{
     public class AnimationManager : MonoBehaviour{
         [SerializeField] private PixelAnimation curr;
         public PixelAnimation CurrentAnimation{ get => curr; private set => curr = value; }
-
+        private PixelAnimation previousAnimation;
+        
         public int ActiveFrame => activeFrame;
 
         [SerializeField] private int activeFrame;
@@ -57,6 +58,10 @@ namespace binc.PixelAnimator{
         }
 
         private void Play(){
+            if (CurrentAnimation != previousAnimation) {
+                previousAnimation = CurrentAnimation;
+                return;
+            }
             var sprites = CurrentAnimation.GetSpriteList();
             var frameRate = CurrentAnimation.frameRate;
             var loop = CurrentAnimation.loop;
@@ -65,8 +70,8 @@ namespace binc.PixelAnimator{
             var secondsPerFrame = 1/ frameRate;
             
             if (timer >= secondsPerFrame) {
-                ApplySpriteProperty();
-                
+                foreach (var l in CurrentAnimation.Layers)
+                    ApplySpriteProperty(l);
             }
             
             if (!(timer >= secondsPerFrame)) return;
@@ -91,17 +96,17 @@ namespace binc.PixelAnimator{
             
         }
 
-        public void ChangeAnimation(PixelAnimation newAnimation){
-            
-            if (CurrentAnimation == newAnimation) return;
-            CurrentAnimation = newAnimation;
+        public void ChangeAnimation(PixelAnimation nextAnimation){
+            if (CurrentAnimation == nextAnimation) return;
+            previousAnimation = CurrentAnimation;
+            CurrentAnimation = nextAnimation;
             activeFrame = 0;
             timer = 0;
             spriteRenderer.sprite = CurrentAnimation.GetSpriteList()[activeFrame];
 
             if (baseObject.transform.childCount > 0) {
                 foreach (Transform child in baseObject.transform) {
-                    foreach (var layer in newAnimation.Layers) {
+                    foreach (var layer in nextAnimation.Layers) {
                         if (gameObjects.Any(x => x.name != preferences.GetGroup(layer.Guid).boxType)) {
                             Destroy(child.gameObject);
                             AddGameObject(groups.First(x => x.Guid == layer.Guid));
@@ -122,26 +127,41 @@ namespace binc.PixelAnimator{
 
 
 
-        private void ApplySpriteProperty(){
+        private void ApplySpriteProperty(Layer layer){
             if (spriteRenderer.sprite != CurrentAnimation.GetSpriteList()[activeFrame]) return;
             
-            foreach (var layer in CurrentAnimation.Layers) {
-                foreach (var spriteMethodName in layer.frames[activeFrame].spriteMethodNames) {
-                    if (listeners.ContainsKey(spriteMethodName)) {
-                        listeners[spriteMethodName].Invoke();
-                    }
-                    else {
-                        Debug.LogWarning($"Method name '{spriteMethodName}' does not exist");
-                    }
-                }
+            foreach (var spriteMethodName in layer.frames[activeFrame].spriteMethodNames) {
+                if (listeners.ContainsKey(spriteMethodName)) {
                     
-                foreach (var value in layer.frames[activeFrame].spriteData) {
+                    foreach (var value in layer.frames[activeFrame].spriteData) {
+                        foreach (var pair in applyPropertyMethods.Where(pair => value.baseData.Name == pair.Key)) {
+                            applyPropertyMethods[pair.Key].Invoke(value.baseData.GetData());
+                        }
+                    }
+
+                    listeners[spriteMethodName].Invoke();
+                }
+                else {
+                    foreach (var value in layer.frames[activeFrame].spriteData) {
+                        foreach (var pair in applyPropertyMethods.Where(pair => value.baseData.Name == pair.Key)) {
+                            applyPropertyMethods[pair.Key].Invoke(value.baseData.GetData());
+                        }
+                    }
+
+                    Debug.LogWarning($"Method name '{spriteMethodName}' does not exist");
+                }
+            }
+
+            if (layer.frames[activeFrame].spriteMethodNames.Count <= 0) {
+                for (var i = 0; i < layer.frames[activeFrame].spriteData.Count; i++) {
+                    var value = layer.frames[activeFrame].spriteData[i];
                     foreach (var pair in applyPropertyMethods.Where(pair => value.baseData.Name == pair.Key)) {
-                        
+                        if(CurrentAnimation.Layers.IndexOf(layer) == -1) return;
                         applyPropertyMethods[pair.Key].Invoke(value.baseData.GetData());
                     }
                 }
             }
+            
         }
         
         public void SetProperty(string name, Action<object> action){

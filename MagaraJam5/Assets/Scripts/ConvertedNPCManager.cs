@@ -7,6 +7,7 @@ public class ConvertedNPCManager : MonoBehaviour
     private NPCManager nPCManager;
     private GhostManager ghostManager;
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
+    private float input;
 
     private void OnEnable()
     {
@@ -22,23 +23,35 @@ public class ConvertedNPCManager : MonoBehaviour
         nPCManager.CheckIcon();
         nPCManager.enabled = false;
     }
-    private void Update()
-    {
-        if (nPCManager.canMove)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * nPCManager._speed, 0);
-        nPCManager.CheckAnimations();
-        nPCManager.CheckRotations();
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+
+    private void Update(){
+        input = Input.GetAxis("Horizontal");
+        if (nPCManager.canMove)
+            GetComponent<Rigidbody2D>().velocity = new Vector2(input * nPCManager._speed, 0);
+
+        nPCManager.CheckAnimations();
+
+        switch (input) {
+            case < 0:
+                nPCManager.SetFacingDirection(-1);
+                break;
+            case > 0:
+                nPCManager.SetFacingDirection(1);
+                break;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.E)) {
             this.enabled = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne)
-        {
+        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne) {
             nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
+            
         }
     }
+
     private void OnDisable()
     {
         GetComponent<SpriteRenderer>().material.SetFloat(OutlineThickness, 0);
