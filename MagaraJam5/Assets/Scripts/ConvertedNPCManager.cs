@@ -15,11 +15,12 @@ public class ConvertedNPCManager : MonoBehaviour
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
 
         ghostManager = GhostManager.Instance;
+        ghostManager.CaptureBodyCount -= 1;
         ghostManager.AvailableNPC = null;
         ghostManager.gameObject.SetActive(false);
 
         nPCManager = GetComponent<NPCManager>();
-        NPCConversationManager.Instance.LeaveNPCFromConversation(nPCManager);
+        NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
         nPCManager.CheckIcon();
         nPCManager.enabled = false;
     }
@@ -51,7 +52,7 @@ public class ConvertedNPCManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            nPCManager.Punch();
+            nPCManager.GetComponent<NPCPunchManager>().Punch(NPCPointLogic.ChaosPointPerPunch);
         }
     }
 

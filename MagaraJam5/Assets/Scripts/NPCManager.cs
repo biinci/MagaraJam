@@ -9,10 +9,8 @@ public class NPCManager : MonoBehaviour
 {
     public float _speed;
 
-    [SerializeField] private float _punchCooldown;
-
     [SerializeField] private float _interractDistance;
-    [SerializeField] private LayerMask _interractLayer;
+    public LayerMask _interractLayer;
 
     [SerializeField] private float _wallCheckDistance;
     [SerializeField] private LayerMask _wallCheckLayer;
@@ -63,7 +61,7 @@ public class NPCManager : MonoBehaviour
         {
             var closestNPC = GetClosestNpc();
             if (closestNPC != null)
-                NPCConversationManager.Instance.MakeConversationWith(this, closestNPC);
+                NPCConversationSystem.Instance.MakeConversationWith(this, closestNPC);
         }
 
         CheckIcon();
@@ -91,8 +89,6 @@ public class NPCManager : MonoBehaviour
 
     public void CheckAnimations()
     {
-
-
         if (!canMove) return;
 
         if (Mathf.Abs(_rb.velocity.x) > 0 && anim.CurrentAnimation == idle)
@@ -184,26 +180,6 @@ public class NPCManager : MonoBehaviour
         leaveCooldown = false;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, _interractDistance);
-    }
-
-    private bool canPunch = true;
-    public void Punch()
-    {
-        if (anim.CurrentAnimation != punchOne && canPunch)
-        {
-            anim.ChangeAnimation(punchOne);
-            StartCoroutine(PunchCooldownCoroutine());
-        }
-    }
-    IEnumerator PunchCooldownCoroutine()
-    {
-        canPunch = false;
-        yield return new WaitForSeconds(_punchCooldown);
-        canPunch = true;
-    }
 
     public void SetFacingDirection(int i)
     {
@@ -217,9 +193,11 @@ public class NPCManager : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 break;
         }
-
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, _interractDistance);
+    }
 }
 
 public enum Direction

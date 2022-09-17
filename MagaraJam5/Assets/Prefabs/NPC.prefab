@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2779545289439713698}
   - component: {fileID: 2779545289439713697}
   - component: {fileID: 2779545289439713696}
+  - component: {fileID: 4311799681469759788}
   - component: {fileID: 2262389240197931871}
   - component: {fileID: 2779545289439713703}
   - component: {fileID: 8600034460888146446}
@@ -103,7 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1.5
-  _punchCooldown: 2
   _interractDistance: 0.3
   _interractLayer:
     serializedVersion: 2
@@ -120,6 +120,21 @@ MonoBehaviour:
   to: {fileID: 11400000, guid: 787eafb629438aa4e9e121c2723618a1, type: 2}
   punchOne: {fileID: 11400000, guid: ad40964d46c10dd4794ec094acb8be55, type: 2}
   canMove: 1
+--- !u!114 &4311799681469759788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779545289439713701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67905cd2a0db958468973bb4c6a33974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaosPoint: 0
+  _punchCooldown: 0.2
+  _punchDistance: 0.2
 --- !u!114 &2262389240197931871
 MonoBehaviour:
   m_ObjectHideFlags: 0

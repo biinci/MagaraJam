@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCConversationManager : MonoBehaviour
+public class NPCConversationSystem : MonoBehaviour
 {
-    public static NPCConversationManager Instance { get; private set; }
+    public static NPCConversationSystem Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
@@ -51,7 +51,6 @@ public class NPCConversationManager : MonoBehaviour
             members.Add(newNPC);
 
             float averageX = FindAvarage(members.ConvertAll<float>(x => x.transform.position.x).ToArray());
-            Debug.Log(averageX);
             foreach (var member in members)
             {
                 var newLookDirection = member.transform.position.x > averageX ? 180 : 0;

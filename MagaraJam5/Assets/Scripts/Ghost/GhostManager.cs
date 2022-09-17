@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GhostManager : MonoBehaviour
 {
     public static GhostManager Instance { get; private set; }
@@ -11,6 +11,19 @@ public class GhostManager : MonoBehaviour
     }
     [SerializeField] private float enterNPCRadius;
     [SerializeField] private LayerMask NPCLayer;
+
+    [SerializeField] private TMP_Text captureBodyCountText;
+
+    private int captureBodyCount = 5;
+    public int CaptureBodyCount
+    {
+        get => captureBodyCount;
+        set
+        {
+            captureBodyCount = value;
+            captureBodyCountText.text = $"x{captureBodyCount}";
+        }
+    }
 
     public NPCManager AvailableNPC { get; set; }
     private void Update()
