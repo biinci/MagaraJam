@@ -8198,13 +8198,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 4311799681469759788, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
-      propertyPath: _punchCooldown
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4311799681469759788, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
-      propertyPath: _punchDistance
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
