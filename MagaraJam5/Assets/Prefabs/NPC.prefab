@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1.5
+  _punchCooldown: 2
   _interractDistance: 0.3
   _interractLayer:
     serializedVersion: 2

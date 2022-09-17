@@ -25,14 +25,16 @@ public class ConvertedNPCManager : MonoBehaviour
     }
 
 
-    private void Update(){
+    private void Update()
+    {
         input = Input.GetAxis("Horizontal");
         if (nPCManager.canMove)
             GetComponent<Rigidbody2D>().velocity = new Vector2(input * nPCManager._speed, 0);
 
         nPCManager.CheckAnimations();
 
-        switch (input) {
+        switch (input)
+        {
             case < 0:
                 nPCManager.SetFacingDirection(-1);
                 break;
@@ -42,13 +44,14 @@ public class ConvertedNPCManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             this.enabled = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne) {
-            nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
-            
+        if (Input.GetMouseButtonDown(0))
+        {
+            nPCManager.Punch();
         }
     }
 
