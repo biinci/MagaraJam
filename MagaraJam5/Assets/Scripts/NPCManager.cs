@@ -11,6 +11,9 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private float _interractDistance;
     [SerializeField] private LayerMask _interractLayer;
 
+    [SerializeField] private float _wallCheckDistance;
+    [SerializeField] private LayerMask _wallCheckLayer;
+
     public GameObject enterNPCIcon;
 
     [SerializeField] private bool leaveCooldown;
@@ -39,12 +42,14 @@ public class NPCManager : MonoBehaviour
 
         SetAnimation();
         anim.AddListener("To", SetAnimation);
-        anim.SetProperty("CanMove", o => {
+        anim.SetProperty("CanMove", o =>
+        {
             // Debug.Log((bool)o + "   " + anim.ActiveFrame);
             canMove = (bool)o;
         });
-        
-        anim.AddListener("SetAnimation", () => {
+
+        anim.AddListener("SetAnimation", () =>
+        {
             SetAnimation();
             Debug.Log(anim.ActiveFrame);
 
@@ -61,6 +66,7 @@ public class NPCManager : MonoBehaviour
         CheckIcon();
         CheckAnimations();
         CheckRotations();
+        CheckWall();
 
     }
     private NPCManager GetClosestNpc()
@@ -79,8 +85,8 @@ public class NPCManager : MonoBehaviour
     }
     public void CheckAnimations()
     {
-        if(anim.CurrentAnimation == punchOne) return;
-        
+        if (anim.CurrentAnimation == punchOne) return;
+
         if (Mathf.Abs(_rb.velocity.x) > 0 && anim.CurrentAnimation == idle)
         {
             anim.ChangeAnimation(to);
@@ -101,13 +107,20 @@ public class NPCManager : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
+    public void CheckWall()
+    {
+        if (Physics2D.Raycast(transform.position, transform.right, _wallCheckDistance, _wallCheckLayer))
+        {
+            CurrentDirection = transform.right == Vector3.right ? Direction.left : Direction.right;
+        }
+    }
     public void CheckIcon()
     {
         enterNPCIcon.SetActive(GhostManager.Instance.AvailableNPC == this);
     }
     private void FixedUpdate()
     {
-        if(canMove)
+        if (canMove)
             _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
     }
     private void SetAnimation()

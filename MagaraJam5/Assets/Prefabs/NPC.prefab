@@ -103,10 +103,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1.5
-  _interractDistance: 0.5
+  _interractDistance: 0.3
   _interractLayer:
     serializedVersion: 2
     m_Bits: 64
+  _wallCheckDistance: 0.1
+  _wallCheckLayer:
+    serializedVersion: 2
+    m_Bits: 1
   enterNPCIcon: {fileID: 9038212084550593745}
   leaveCooldown: 0
   anim: {fileID: 8600034460888146446}
@@ -160,8 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f86ae7691eb2864493e6cfd882d8a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curr: {fileID: 0}
   activeFrame: 0
   spriteRenderer: {fileID: 2779545289439713697}
+  timer: 0
   gameObjects: []
 --- !u!61 &2779545289439713702
 BoxCollider2D:

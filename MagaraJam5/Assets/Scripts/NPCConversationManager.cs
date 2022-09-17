@@ -12,16 +12,17 @@ public class NPCConversationManager : MonoBehaviour
     private readonly List<Conversation> conversations = new();
     public void MakeConversationWith(NPCManager from, NPCManager to)
     {
-        if (conversations.FindIndex(x => x.members.Contains(from)) != -1) return;
         from.OnStartConversation();
+        if (conversations.FindIndex(x => x.members.Contains(from)) != -1) return;
 
         var conversationIndex = conversations.FindIndex(x => x.members.Contains(to));
         if (conversationIndex != -1)
         {
-            conversations[conversationIndex].members.Add(from);
+            conversations[conversationIndex].JoinNPCToConversation(from);
         }
         else
         {
+            to.OnStartConversation();
             conversations.Add(new Conversation(from, to));
         }
     }
@@ -40,9 +41,21 @@ public class NPCConversationManager : MonoBehaviour
         {
             foreach (var member in firstMembers)
             {
-                members.Add(member);
+                JoinNPCToConversation(member);
             }
             Instance.StartCoroutine(ConversationCoroutine());
+        }
+        public void JoinNPCToConversation(NPCManager newNPC)
+        {
+            members.Add(newNPC);
+
+            float averageX = FindAvarage(members.ConvertAll<float>(x => x.transform.position.x).ToArray());
+            Debug.Log(averageX);
+            foreach (var member in members)
+            {
+                var newLookDirection = member.transform.position.x > averageX ? 180 : 0;
+                member.transform.rotation = Quaternion.Euler(0, newLookDirection, 0);
+            }
         }
         private IEnumerator ConversationCoroutine()
         {
@@ -53,6 +66,19 @@ public class NPCConversationManager : MonoBehaviour
                 yield return new WaitForSeconds(0.7f);
             }
             Instance.conversations.Remove(this);
+        }
+        static float FindAvarage(float[] arr)
+        {
+            float sum = 0;
+            float average = 0.0F;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+
+            average = (float)sum / arr.Length;
+            return average;
         }
     }
 }

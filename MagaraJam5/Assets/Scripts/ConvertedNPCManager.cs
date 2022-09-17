@@ -12,7 +12,7 @@ public class ConvertedNPCManager : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().material.SetFloat(OutlineThickness, 1);
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
-        
+
         ghostManager = GhostManager.Instance;
         ghostManager.AvailableNPC = null;
         ghostManager.gameObject.SetActive(false);
@@ -24,7 +24,7 @@ public class ConvertedNPCManager : MonoBehaviour
     }
     private void Update()
     {
-        if(nPCManager.canMove)
+        if (nPCManager.canMove)
             GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * nPCManager._speed, 0);
         nPCManager.CheckAnimations();
         nPCManager.CheckRotations();
@@ -33,16 +33,20 @@ public class ConvertedNPCManager : MonoBehaviour
         {
             this.enabled = false;
         }
-        
-        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne) {
+
+        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne)
+        {
             nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
         }
     }
     private void OnDisable()
     {
         GetComponent<SpriteRenderer>().material.SetFloat(OutlineThickness, 0);
-        ghostManager.transform.position = transform.position + new Vector3(0, 1f);
+
+        if (ghostManager == null) return;
+
         ghostManager.gameObject.SetActive(true);
+        ghostManager.transform.position = transform.position + new Vector3(0, 1f);
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = ghostManager.transform;
 
         nPCManager.enabled = true;

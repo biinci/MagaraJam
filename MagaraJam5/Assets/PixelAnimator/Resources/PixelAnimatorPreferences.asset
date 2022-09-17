@@ -34,7 +34,7 @@ MonoBehaviour:
     guid: 4641cd42c5cfae447a0439d6e616c50c
   - color: {r: 0.19215684, g: 0.8, b: 0.46709508, a: 1}
     boxType: NoCollider
-    activeLayer: 0
+    activeLayer: 7
     physicMaterial: {fileID: 0}
     rounded: 0
     collisionLayer: 0
