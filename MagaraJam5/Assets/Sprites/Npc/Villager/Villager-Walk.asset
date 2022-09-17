@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: Villager-Walk
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: a4a04cfd44cbf8a42bd02d1f69e83b28
+    sprite: {fileID: 2126151698, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: 8c81bd9040f35ae4f98cc73978133c72
+    sprite: {fileID: -2078849508, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: 2d10c8052941195488ec551474d25703
+    sprite: {fileID: -929426445, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: 6100d0289c157ea4c94443517da4377b
+    sprite: {fileID: 78048595, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: 75b1edb84f01dc644a540ef8c40c994e
+    sprite: {fileID: 831396562, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: 2d9152a0321f53740a8fc88f475a1b20
+    sprite: {fileID: 1513428597, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  - SpriteId: e80879caf7300b8428235478b8bd71a2
+    sprite: {fileID: 1383434129, guid: 75d45018500fb204f853cb456f8d686c, type: 3}
+  layers: []
+  references:
+    version: 2
+    RefIds: []

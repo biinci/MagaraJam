@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: Villager-Idle
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: 2ce8f6d0791260c4b84e5bf3b3401c5f
+    sprite: {fileID: -1607000869, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  - SpriteId: fd251494fe7732a4b85b4e19e610cd16
+    sprite: {fileID: 401901445, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  - SpriteId: db62348ad380d474b9fc831d45ff98b4
+    sprite: {fileID: 1293643910, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  - SpriteId: 7e9eb9c7c5f174b4abf69fd6b42b76e5
+    sprite: {fileID: 622735045, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  - SpriteId: 626f98c2d5e48444f8cd159b69a3b5e7
+    sprite: {fileID: -246454581, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  - SpriteId: ecc439b6a17149345866eed486eaa401
+    sprite: {fileID: -1528573506, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
+  layers: []
+  references:
+    version: 2
+    RefIds: []
