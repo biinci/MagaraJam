@@ -13,9 +13,105 @@ MonoBehaviour:
   m_Name: Farmer-Idle
   m_EditorClassIdentifier: 
   loop: 1
-  frameRate: 0
-  pixelSprites: []
-  layers: []
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: 2398437601bfaa54cab42eb4e84e4212
+    sprite: {fileID: 57880870, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  - SpriteId: d4c2e82fecfe30c4799b09220fd12d1c
+    sprite: {fileID: -538514610, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  - SpriteId: 3ffc5c6c10cd4d5478b89cf254fb6886
+    sprite: {fileID: -1853205945, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  - SpriteId: 7d85e9790e16e604baa4e4818a8968f9
+    sprite: {fileID: 982415106, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  - SpriteId: 1e16c2e29a84bf141ac4a6bde9aca8a0
+    sprite: {fileID: -1466121625, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  - SpriteId: 68b4fa95860b88942865f52155eea7dc
+    sprite: {fileID: 1939572886, guid: 91c0b7b61b9de1f459463c53c8908130, type: 3}
+  layers:
+  - frames:
+    - SpriteId: ffd965513f44015408383497f173c867
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: f479f18c44b14a74f9417fac3283955d
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: b54fb1dd7c9d16447b6b3370ec75c175
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: 01de4abfe285e6241a34f42a4af17367
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: e0fc4aeae868e9740b092804a54ba0e2
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: 800f1bbff795ecd4eb24c060a04eef52
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    activeBox: 1
+    onHandleTopLeft: 0
+    onHandleTopCenter: 0
+    onHandleTopRight: 0
+    onHandleRightCenter: 0
+    onHandleBottomRight: 0
+    onHandleBottomCenter: 0
+    onHandleBottomLeft: 0
+    onHandleLeftCenter: 0
+    onMiddle: 0
+    guid: 10f22ec938d36e246814b963f3cae43b
   references:
     version: 2
     RefIds: []

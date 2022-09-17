@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
-  m_Name: Farmer-To
+  m_Name: Blacksmith-To
   m_EditorClassIdentifier: 
   loop: 1
   frameRate: 36
   pixelSprites:
-  - SpriteId: 284b7a5fde32bb2489e56e9e03fc2543
-    sprite: {fileID: 144895875, guid: 09655d135344afa4bbb2709383d3017b, type: 3}
+  - SpriteId: 91601d8cafc89874da4f1ef65f39aed3
+    sprite: {fileID: 1904356692, guid: 8ccc8e9c34b5327429d38147035ba72b, type: 3}
   layers:
   - frames:
-    - SpriteId: b87640f6efc8d3344bb5f997b1119bd1
+    - SpriteId: 91601d8cafc89874da4f1ef65f39aed3
       hitBoxData: []
       spriteData: []
       spriteMethodNames:
@@ -28,10 +28,10 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
+        x: 16
+        y: 16
+        width: 16
+        height: 16
     activeBox: 1
     onHandleTopLeft: 0
     onHandleTopCenter: 0

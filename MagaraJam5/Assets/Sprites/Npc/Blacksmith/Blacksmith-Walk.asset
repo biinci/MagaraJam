@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: Blacksmith-Walk
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: 52a2ac11b6230d44e968835fd83b81ee
+    sprite: {fileID: -1360012187, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: d446c77685f835b41baccd105532185a
+    sprite: {fileID: -1608821238, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: 0825820a1ffabdd4185b7f8cdbb71782
+    sprite: {fileID: -1898950289, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: 6daf11101da61d0429f54ada2c2de24a
+    sprite: {fileID: 1023801877, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: fcf0d8133006afa4b8de561a9b2613d9
+    sprite: {fileID: -1009016045, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: af2f7aafba7e8b74f8d257363d1118b8
+    sprite: {fileID: -377198280, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  - SpriteId: 09e494491937b354c8ff5dfe00461d4b
+    sprite: {fileID: -1145917158, guid: 6c3d53740cbc4e544b196a2e19bc0e08, type: 3}
+  layers: []
+  references:
+    version: 2
+    RefIds: []

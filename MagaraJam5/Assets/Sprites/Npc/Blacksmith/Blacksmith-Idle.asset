@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: Blacksmith-Idle
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: 260c0c539b9361f4090a48c02c887205
+    sprite: {fileID: 106626480, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  - SpriteId: 8d7a5f0e0618a1246a606a61b6398073
+    sprite: {fileID: 1254915310, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  - SpriteId: 8419d03a68b2c6a4ea688ce7cfc81693
+    sprite: {fileID: -1911004325, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  - SpriteId: 865a1f7b25df2fd4996e4db68da01d9a
+    sprite: {fileID: 1926197907, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  - SpriteId: 2ac09c5157d8f6340871246c5aa28768
+    sprite: {fileID: 659221671, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  - SpriteId: 9cf1013e1a5a8fe44a94c0bd7c36ce0f
+    sprite: {fileID: 1779790137, guid: dbbc03c532617344388e0485d110d8be, type: 3}
+  layers: []
+  references:
+    version: 2
+    RefIds: []
