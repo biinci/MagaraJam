@@ -198,6 +198,8 @@ public class NPCManager : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
+    
+
 }
 
 public enum Direction

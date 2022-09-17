@@ -21,6 +21,7 @@ public class NPCPunchManager : MonoBehaviour
     private void Start()
     {
         nPCManager = GetComponent<NPCManager>();
+        nPCManager.anim.AddListener("Punch", Punch);
     }
     private void Update()
     {
@@ -61,6 +62,35 @@ public class NPCPunchManager : MonoBehaviour
             StartCoroutine(PunchCooldownCoroutine());
         }
     }
+    
+    public void Punch()
+    {
+        Debug.Log("Calisiyor");
+        // if (nPCManager.anim.CurrentAnimation != nPCManager.punchOne && canPunch)
+                    // {
+                    //     var npcCols = Physics2D.OverlapCircleAll(
+                    //         transform.position + transform.right * _punchDistance,
+                    //         0.15f,
+                    //         nPCManager._interractLayer
+                    //     );
+                    //
+                    //     foreach (var npcCol in npcCols)
+                    //     {
+                    //         NPCPunchManager npc = npcCol.GetComponent<NPCPunchManager>();
+                    //         if (npc == null) continue;
+                    //         if (npc == this) continue;
+                    //
+                    //         npc.ChaosPoint += chaosPoint / 3;
+                    //         ChaosPoint = chaosPoint / 3;
+                    //         break;
+                    //     }
+                    //
+                    //     nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
+                    //
+                    //     StartCoroutine(PunchCooldownCoroutine());
+                    // }
+    }
+    
     IEnumerator PunchCooldownCoroutine()
     {
         canPunch = false;

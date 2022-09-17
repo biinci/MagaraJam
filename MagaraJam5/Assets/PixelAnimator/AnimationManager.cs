@@ -103,19 +103,14 @@ namespace binc.PixelAnimator{
             activeFrame = 0;
             timer = 0;
             spriteRenderer.sprite = CurrentAnimation.GetSpriteList()[activeFrame];
+            gameObjects = new List<GameObject>();
 
-            if (baseObject.transform.childCount > 0) {
-                foreach (Transform child in baseObject.transform) {
-                    foreach (var layer in nextAnimation.Layers) {
-                        if (gameObjects.Any(x => x.name != preferences.GetGroup(layer.Guid).boxType)) {
-                            Destroy(child.gameObject);
-                            AddGameObject(groups.First(x => x.Guid == layer.Guid));
-                        }
-                    }
+            foreach (Transform child in baseObject.transform) {
+                Destroy(child.gameObject);
 
-                }
             }
-            else {
+            
+            if(baseObject.transform.childCount <= 0){
                 foreach (var layer in CurrentAnimation.Layers) {
                     AddGameObject(groups.First(x => x.Guid == layer.Guid));
                 }
@@ -138,7 +133,6 @@ namespace binc.PixelAnimator{
                             applyPropertyMethods[pair.Key].Invoke(value.baseData.GetData());
                         }
                     }
-
                     listeners[spriteMethodName].Invoke();
                 }
                 else {
@@ -163,6 +157,18 @@ namespace binc.PixelAnimator{
             }
             
         }
+
+        private void ApplyHitBoxProperty(Layer layer){
+            foreach (var frame in layer.frames) {
+                foreach (var methodName in frame.hitBoxMethodNames) {
+                    if (listeners.ContainsKey(methodName)) {
+                        
+                        listeners[methodName].Invoke();
+                    }
+                }
+            }
+        }
+        
         
         public void SetProperty(string name, Action<object> action){
             applyPropertyMethods.Add(name, action);
@@ -178,8 +184,8 @@ namespace binc.PixelAnimator{
             
             for(var i = 0; i < layers.Count; i++){
 
-                    
-                var layer = layers.FirstOrDefault(x => x.Guid.ToString() == preferences.GetGroup(x.Guid).Guid);
+                    //layers.FirstOrDefault(x => x.Guid.ToString() == preferences.GetGroup(x.Guid).Guid);
+                    var layer = layers[i];
                     
                 // Trigger
                 if (layer == null || i >= gameObjects.Count) continue;
@@ -229,9 +235,9 @@ namespace binc.PixelAnimator{
 
         #region Set Collider Detect
         
-        // private void OnTriggerEnter2D(Collider2D other){
-        //     OnTouch(other, Frame.ColliderTypes.Trigger, Group.ColliderDetection.Enter);
-        // }
+        private void OnTriggerEnter2D(Collider2D other){
+            OnTouch(other, Frame.ColliderTypes.Trigger, Group.ColliderDetection.Enter);
+        }
         //
         //
         // private void OnTriggerStay2D(Collider2D other) {
@@ -257,7 +263,7 @@ namespace binc.PixelAnimator{
         //     OnTouch(other, Frame.ColliderTypes.NoTrigger, Group.ColliderDetection.Exit);
         //     
         // }
-        
+        //
 
         private void OnTouch(Collider2D other, Frame.ColliderTypes colliderType, Group.ColliderDetection colliderDetection){
             var layers = CurrentAnimation.Layers;
@@ -270,7 +276,7 @@ namespace binc.PixelAnimator{
                 if (!boxCollider2D.IsTouching(other)) continue;
                 
                 if(other.gameObject.layer == group.collisionLayer){
-                    
+                    ApplyHitBoxProperty(CurrentAnimation.Layers[i]);
                 }
 
             }

@@ -43,6 +43,14 @@ MonoBehaviour:
     collisionLayer: 0
     colliderDetection: 0
     guid: 10f22ec938d36e246814b963f3cae43b
+  - color: {r: 0.8, g: 0.19843073, b: 0.19215684, a: 1}
+    boxType: Hurt
+    activeLayer: 7
+    physicMaterial: {fileID: 0}
+    rounded: 0
+    collisionLayer: 7
+    colliderDetection: 0
+    guid: 14085b66c98a56e4bbc1f6f14d45f0e1
   references:
     version: 2
     RefIds:
