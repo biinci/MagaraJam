@@ -63,14 +63,16 @@ namespace binc.PixelAnimator{
 
             timer += Time.deltaTime;
             var secondsPerFrame = 1/ frameRate;
-
-            if (!(timer >= secondsPerFrame)) return;
-            timer -= secondsPerFrame;
             
-            if (timer >= secondsPerFrame - 0.01f) {
+            if (timer >= secondsPerFrame) {
                 ApplySpriteProperty();
                 
             }
+            
+            if (!(timer >= secondsPerFrame)) return;
+            timer -= secondsPerFrame;
+            
+
 
             if (loop) {
                 activeFrame = (activeFrame + 1) % sprites.Count;
