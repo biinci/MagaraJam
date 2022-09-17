@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Npc-To
   m_EditorClassIdentifier: 
   loop: 1
-  frameRate: 12
+  frameRate: 36
   pixelSprites:
   - SpriteId: b87640f6efc8d3344bb5f997b1119bd1
     sprite: {fileID: 21300000, guid: 9ead9d3e80c453842af3dfe3474d3183, type: 3}

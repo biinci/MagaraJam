@@ -10,104 +10,104 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
-  m_Name: Npc-PunchOne
+  m_Name: Npc-Punch
   m_EditorClassIdentifier: 
-  loop: 0
+  loop: 1
   frameRate: 12
   pixelSprites:
-  - SpriteId: 035ea8fedeed3d8419fa57fef1ed1f05
+  - SpriteId: b1014ec8402068f4e9d3638adcf9536b
     sprite: {fileID: -1117033168, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
-  - SpriteId: 4e557aacc51167542991246cfd1b33e9
+  - SpriteId: b413fdf6fb1234f43b5213f98cfc5a1e
     sprite: {fileID: 89736224, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
-  - SpriteId: deea04ea57ab16249b0e07f3bbb728cf
+  - SpriteId: baafecf92827f184c89c18d3d31e8ac7
     sprite: {fileID: -1879497136, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
-  - SpriteId: ace50977ba2842f419baa9965096bba5
+  - SpriteId: bf66e0dcd1edf3c40b497f0d171e644b
     sprite: {fileID: 293587833, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
-  - SpriteId: dd2b90909f7e8ba4cbb9d044fad1fff3
+  - SpriteId: 543cb678c554e564aac116a27dfdf96f
     sprite: {fileID: -939319676, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
-  - SpriteId: ef57c2b6888559f489e9b175e25c27e6
+  - SpriteId: 235e526067fa0f9449a61f523bc5353e
     sprite: {fileID: -47385293, guid: 7d3e5b47ca4225542a7e0b9e9c659d90, type: 3}
   layers:
   - frames:
-    - SpriteId: 035ea8fedeed3d8419fa57fef1ed1f05
+    - SpriteId: b1014ec8402068f4e9d3638adcf9536b
       hitBoxData: []
       spriteData:
       - baseData:
-          rid: 7165746354485723145
+          rid: 7165746366239997960
         dataType: 2
       spriteMethodNames: []
       hitBoxMethodNames: []
-      colliderType: 0
+      colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 18
-        width: 6
-        height: 28
-    - SpriteId: 4e557aacc51167542991246cfd1b33e9
+        width: 8
+        height: 29
+    - SpriteId: b413fdf6fb1234f43b5213f98cfc5a1e
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
       hitBoxMethodNames: []
-      colliderType: 0
+      colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 18
-        width: 6
-        height: 28
-    - SpriteId: deea04ea57ab16249b0e07f3bbb728cf
+        width: 8
+        height: 29
+    - SpriteId: baafecf92827f184c89c18d3d31e8ac7
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
       hitBoxMethodNames: []
-      colliderType: 0
+      colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 18
-        width: 6
-        height: 28
-    - SpriteId: ace50977ba2842f419baa9965096bba5
+        width: 8
+        height: 29
+    - SpriteId: bf66e0dcd1edf3c40b497f0d171e644b
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
       hitBoxMethodNames: []
-      colliderType: 0
-      hitBoxRect:
-        serializedVersion: 2
-        x: 31
-        y: 18
-        width: 6
-        height: 28
-    - SpriteId: dd2b90909f7e8ba4cbb9d044fad1fff3
-      hitBoxData: []
-      spriteData:
-      - baseData:
-          rid: 7165746354485723143
-        dataType: 2
-      spriteMethodNames: []
-      hitBoxMethodNames: []
-      colliderType: 0
-      hitBoxRect:
-        serializedVersion: 2
-        x: 31
-        y: 18
-        width: 6
-        height: 28
-    - SpriteId: ef57c2b6888559f489e9b175e25c27e6
-      hitBoxData: []
-      spriteData: []
-      spriteMethodNames:
-      - SetAnimation
-      hitBoxMethodNames: []
-      colliderType: 0
+      colliderType: 1
       hitBoxRect:
         serializedVersion: 2
         x: 30
         y: 18
-        width: 6
-        height: 28
+        width: 8
+        height: 29
+    - SpriteId: 543cb678c554e564aac116a27dfdf96f
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 31
+        y: 18
+        width: 8
+        height: 29
+    - SpriteId: 235e526067fa0f9449a61f523bc5353e
+      hitBoxData: []
+      spriteData:
+      - baseData:
+          rid: 7165746366239997961
+        dataType: 2
+      spriteMethodNames:
+      - SetAnimation
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 30
+        y: 18
+        width: 8
+        height: 29
     activeBox: 1
     onHandleTopLeft: 0
     onHandleTopCenter: 0
@@ -122,15 +122,15 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7165746354485723143
-      type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
-      data:
-        name: CanMove
-        guid: 567ff840260fac547a0c35d5b566ffe1
-        data: 1
-    - rid: 7165746354485723145
+    - rid: 7165746366239997960
       type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
         name: CanMove
         guid: 567ff840260fac547a0c35d5b566ffe1
         data: 0
+    - rid: 7165746366239997961
+      type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: CanMove
+        guid: 567ff840260fac547a0c35d5b566ffe1
+        data: 1

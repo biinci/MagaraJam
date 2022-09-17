@@ -34,7 +34,7 @@ public class ConvertedNPCManager : MonoBehaviour
             this.enabled = false;
         }
         
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && nPCManager.anim.CurrentAnimation != nPCManager.punchOne) {
             nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
         }
     }

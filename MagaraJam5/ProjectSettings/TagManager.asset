@@ -44,3 +44,6 @@ TagManager:
   - name: Envinvorment
     uniqueID: 1258261425
     locked: 0
+  - name: Effects
+    uniqueID: 3089549125
+    locked: 0

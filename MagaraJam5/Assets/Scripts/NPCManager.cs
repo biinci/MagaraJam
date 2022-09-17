@@ -40,10 +40,15 @@ public class NPCManager : MonoBehaviour
         SetAnimation();
         anim.AddListener("To", SetAnimation);
         anim.SetProperty("CanMove", o => {
-            Debug.Log((bool)o);
-            canMove = !(bool)o;
+            // Debug.Log((bool)o + "   " + anim.ActiveFrame);
+            canMove = (bool)o;
         });
-        anim.AddListener("SetAnimation", SetAnimation);
+        
+        anim.AddListener("SetAnimation", () => {
+            SetAnimation();
+            Debug.Log(anim.ActiveFrame);
+
+        });
     }
     private void Update()
     {
@@ -110,11 +115,9 @@ public class NPCManager : MonoBehaviour
         switch (_rb.velocity.x)
         {
             case > 0 or < 0:
-                anim.ChangeAnimation(to);
                 anim.ChangeAnimation(walk);
                 break;
             case 0:
-                anim.ChangeAnimation(to);
                 anim.ChangeAnimation(idle);
                 break;
         }

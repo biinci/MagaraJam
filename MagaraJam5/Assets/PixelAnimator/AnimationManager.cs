@@ -12,7 +12,8 @@ using binc.PixelAnimator.Utility;
 namespace binc.PixelAnimator{
 
     public class AnimationManager : MonoBehaviour{
-        public PixelAnimation CurrentAnimation{ get; private set; }
+        [SerializeField] private PixelAnimation curr;
+        public PixelAnimation CurrentAnimation{ get => curr; private set => curr = value; }
 
         public int ActiveFrame => activeFrame;
 
@@ -20,7 +21,7 @@ namespace binc.PixelAnimator{
 
         [SerializeField] private SpriteRenderer spriteRenderer;
 
-        private float timer;
+        [SerializeField]private float timer;
 
         private GameObject baseObject;
         [SerializeField] private List<GameObject> gameObjects;
@@ -62,24 +63,30 @@ namespace binc.PixelAnimator{
 
             timer += Time.deltaTime;
             var secondsPerFrame = 1/ frameRate;
+
             if (!(timer >= secondsPerFrame)) return;
             timer -= secondsPerFrame;
-
+            
+            if (timer >= secondsPerFrame - 0.01f) {
+                ApplySpriteProperty();
+                
+            }
 
             if (loop) {
                 activeFrame = (activeFrame + 1) % sprites.Count;
-                ApplySpriteProperty();
-                
+                spriteRenderer.sprite = sprites[activeFrame];
+                ApplyHitBox();
             }
             else{
                 if (spriteRenderer.sprite != sprites[^1]) {
                     activeFrame = (activeFrame + 1) % sprites.Count;
-                    ApplySpriteProperty();
+                    spriteRenderer.sprite = sprites[activeFrame];
+                    ApplyHitBox();
                 }
-            }
+            }          
+
             
-            spriteRenderer.sprite = sprites[activeFrame];
-            ApplyHitBox();
+            
         }
 
         public void ChangeAnimation(PixelAnimation newAnimation){
@@ -88,8 +95,8 @@ namespace binc.PixelAnimator{
             CurrentAnimation = newAnimation;
             activeFrame = 0;
             timer = 0;
-            
-                        
+            spriteRenderer.sprite = CurrentAnimation.GetSpriteList()[activeFrame];
+
             if (baseObject.transform.childCount > 0) {
                 foreach (Transform child in baseObject.transform) {
                     foreach (var layer in newAnimation.Layers) {
@@ -106,6 +113,7 @@ namespace binc.PixelAnimator{
                     AddGameObject(groups.First(x => x.Guid == layer.Guid));
                 }
             }
+            
             ApplyHitBox();
 
         }
@@ -113,6 +121,8 @@ namespace binc.PixelAnimator{
 
 
         private void ApplySpriteProperty(){
+            if (spriteRenderer.sprite != CurrentAnimation.GetSpriteList()[activeFrame]) return;
+            
             foreach (var layer in CurrentAnimation.Layers) {
                 foreach (var spriteMethodName in layer.frames[activeFrame].spriteMethodNames) {
                     if (listeners.ContainsKey(spriteMethodName)) {
@@ -122,8 +132,10 @@ namespace binc.PixelAnimator{
                         Debug.LogWarning($"Method name '{spriteMethodName}' does not exist");
                     }
                 }
+                    
                 foreach (var value in layer.frames[activeFrame].spriteData) {
                     foreach (var pair in applyPropertyMethods.Where(pair => value.baseData.Name == pair.Key)) {
+                        
                         applyPropertyMethods[pair.Key].Invoke(value.baseData.GetData());
                     }
                 }

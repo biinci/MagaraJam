@@ -113,7 +113,7 @@ MonoBehaviour:
   walk: {fileID: 11400000, guid: 9d7aa62110a7b3441a5b39a04974ef49, type: 2}
   idle: {fileID: 11400000, guid: 46d099032df952742b5c5765d1f9147b, type: 2}
   to: {fileID: 11400000, guid: 787eafb629438aa4e9e121c2723618a1, type: 2}
-  punchOne: {fileID: 11400000, guid: cd59de5b66b60b7419c80b5db3f375c2, type: 2}
+  punchOne: {fileID: 11400000, guid: ad40964d46c10dd4794ec094acb8be55, type: 2}
   canMove: 1
 --- !u!114 &2262389240197931871
 MonoBehaviour:

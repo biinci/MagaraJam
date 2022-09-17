@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
   m_Name: Npc-Idle
   m_EditorClassIdentifier: 
-  loop: 1
+  loop: 0
   frameRate: 12
   pixelSprites:
-  - SpriteId: 1bccdef4d3fafe54a841afbaa04ad085
+  - SpriteId: ffd965513f44015408383497f173c867
     sprite: {fileID: -1730893440, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
-  - SpriteId: dfbd3a1637bf5374ab7ce35cc038fb5a
+  - SpriteId: f479f18c44b14a74f9417fac3283955d
     sprite: {fileID: -116884877, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
-  - SpriteId: a4de9f239416c2e43a4381c8281f6f78
+  - SpriteId: b54fb1dd7c9d16447b6b3370ec75c175
     sprite: {fileID: 621098240, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
-  - SpriteId: f54235216bda2bb4cab0abc3f221be81
+  - SpriteId: 01de4abfe285e6241a34f42a4af17367
     sprite: {fileID: 482467698, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
-  - SpriteId: fde04f48d1c1c66479b979d6caf8ba90
+  - SpriteId: e0fc4aeae868e9740b092804a54ba0e2
     sprite: {fileID: 254344313, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
-  - SpriteId: 8e3299c7f44135748a972703ba0f47c1
+  - SpriteId: 800f1bbff795ecd4eb24c060a04eef52
     sprite: {fileID: 835246915, guid: 0b442fabd9614404b87674b47b142c57, type: 3}
   layers:
   - frames:
-    - SpriteId: 1bccdef4d3fafe54a841afbaa04ad085
+    - SpriteId: ffd965513f44015408383497f173c867
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -37,11 +37,11 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
-    - SpriteId: dfbd3a1637bf5374ab7ce35cc038fb5a
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: f479f18c44b14a74f9417fac3283955d
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -49,11 +49,11 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
-    - SpriteId: a4de9f239416c2e43a4381c8281f6f78
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: b54fb1dd7c9d16447b6b3370ec75c175
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -61,11 +61,11 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
-    - SpriteId: f54235216bda2bb4cab0abc3f221be81
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: 01de4abfe285e6241a34f42a4af17367
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -73,11 +73,11 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
-    - SpriteId: fde04f48d1c1c66479b979d6caf8ba90
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: e0fc4aeae868e9740b092804a54ba0e2
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -85,11 +85,11 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
-    - SpriteId: 8e3299c7f44135748a972703ba0f47c1
+        x: 27
+        y: 18
+        width: 8
+        height: 28
+    - SpriteId: 800f1bbff795ecd4eb24c060a04eef52
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -97,10 +97,10 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 28
-        y: 19
-        width: 7
-        height: 27
+        x: 27
+        y: 18
+        width: 8
+        height: 28
     activeBox: 1
     onHandleTopLeft: 0
     onHandleTopCenter: 0
