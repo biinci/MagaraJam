@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3580649736465538767}
+  - {fileID: 7174575342812882174}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,8 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaosPoint: 0
-  _punchCooldown: 0.2
-  _punchDistance: 0.2
+  _punchCooldown: 2
+  _punchKnockback: 3
+  _punchTransform: {fileID: 7174575342812882174}
 --- !u!114 &2262389240197931871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +213,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16488981, y: 0.45015812}
   m_EdgeRadius: 0
+--- !u!1 &6483598994413094911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7174575342812882174}
+  m_Layer: 6
+  m_Name: PunchTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7174575342812882174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483598994413094911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2352, y: 0.0703, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2779545289439713698}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9038212084550593745
 GameObject:
   m_ObjectHideFlags: 0

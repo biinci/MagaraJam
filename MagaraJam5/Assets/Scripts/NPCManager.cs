@@ -28,7 +28,7 @@ public class NPCManager : MonoBehaviour
     private int facingDirection;
     private Direction currentDirection;
 
-    private Direction CurrentDirection
+    public Direction CurrentDirection
     {
         get => currentDirection;
         set => currentDirection = value;
@@ -198,7 +198,7 @@ public class NPCManager : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
-    
+
 
 }
 

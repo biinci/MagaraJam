@@ -52,7 +52,8 @@ public class ConvertedNPCManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            nPCManager.GetComponent<NPCPunchManager>().Punch(NPCPointLogic.ChaosPointPerPunch);
+            GetComponent<NPCPunchManager>().StartPunchCoroutine();
+            nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
         }
     }
 

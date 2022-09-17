@@ -15,7 +15,8 @@ public class NPCPunchManager : MonoBehaviour
         }
     }
     [SerializeField] private float _punchCooldown;
-    [SerializeField] private float _punchDistance;
+    [SerializeField] private float _punchKnockback;
+    [SerializeField] private Transform _punchTransform;
     private NPCManager nPCManager;
     private bool canPunch = true;
     private void Start()
@@ -25,82 +26,77 @@ public class NPCPunchManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(nPCManager.enabled);
-
-        if (ChaosPoint > 10 && nPCManager.enabled == true)
+        if (ChaosPoint > 3 && nPCManager.enabled)
         {
             NPCPunchManager npc = PunchableNPC();
-            if (npc != null)
+            if (npc != null && canPunch)
             {
-                npc.Punch(ChaosPoint);
+                nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
+                StartPunchCoroutine();
             }
         }
     }
-    public void Punch(int chaosPoint)
+    public void Punch()
     {
-        if (nPCManager.anim.CurrentAnimation != nPCManager.punchOne && canPunch)
-        {
-            var npcCols = Physics2D.OverlapCircleAll(
-                transform.position + transform.right * _punchDistance,
+        Debug.Log("çağrıldı");
+        int chaosPoint;
+        if (nPCManager.enabled == false)
+            chaosPoint = NPCPointLogic.ChaosPointPerPunch;
+        else
+            chaosPoint = ChaosPoint;
+
+        var npcCols = Physics2D.OverlapCircleAll(
+                _punchTransform.position,
                 0.15f,
                 nPCManager._interractLayer
             );
 
-            foreach (var npcCol in npcCols)
-            {
-                NPCPunchManager npc = npcCol.GetComponent<NPCPunchManager>();
-                if (npc == null) continue;
-                if (npc == this) continue;
+        foreach (var npcCol in npcCols)
+        {
+            NPCPunchManager npc = npcCol.GetComponent<NPCPunchManager>();
+            if (npc == null) continue;
+            if (npc == this) continue;
 
-                npc.ChaosPoint += chaosPoint / 3;
-                ChaosPoint = chaosPoint / 3;
-                break;
-            }
-
-            nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
-
-            StartCoroutine(PunchCooldownCoroutine());
+            npc.ChaosPoint += chaosPoint / 3;
+            npc.GetComponent<Rigidbody2D>().velocity = _punchKnockback * (npc.transform.position.x - transform.position.x) * Vector2.right;
+            npc.StartCoroutine(npc.TargetingCoroutine(this));
+            ChaosPoint = chaosPoint / 3;
+            break;
         }
     }
-    
-    public void Punch()
+    IEnumerator TargetingCoroutine(NPCPunchManager target)
     {
-        Debug.Log("Calisiyor");
-        // if (nPCManager.anim.CurrentAnimation != nPCManager.punchOne && canPunch)
-                    // {
-                    //     var npcCols = Physics2D.OverlapCircleAll(
-                    //         transform.position + transform.right * _punchDistance,
-                    //         0.15f,
-                    //         nPCManager._interractLayer
-                    //     );
-                    //
-                    //     foreach (var npcCol in npcCols)
-                    //     {
-                    //         NPCPunchManager npc = npcCol.GetComponent<NPCPunchManager>();
-                    //         if (npc == null) continue;
-                    //         if (npc == this) continue;
-                    //
-                    //         npc.ChaosPoint += chaosPoint / 3;
-                    //         ChaosPoint = chaosPoint / 3;
-                    //         break;
-                    //     }
-                    //
-                    //     nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
-                    //
-                    //     StartCoroutine(PunchCooldownCoroutine());
-                    // }
+        yield return new WaitForSeconds(0.5f);
+        var startPoint = ChaosPoint;
+        NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
+        while (ChaosPoint == startPoint)
+        {
+            nPCManager.CurrentDirection = transform.position.x > target.transform.position.x ? Direction.left : Direction.right;
+            yield return null;
+        }
+
+
     }
-    
-    IEnumerator PunchCooldownCoroutine()
+
+    public void StartPunchCoroutine()
+    {
+        if (canPunch)
+            StartCoroutine(PunchCoroutine());
+    }
+
+    IEnumerator PunchCoroutine()
     {
         canPunch = false;
+        yield return new WaitForSeconds(0.25f);
+        Punch();
         yield return new WaitForSeconds(_punchCooldown);
         canPunch = true;
     }
+
     private NPCPunchManager PunchableNPC()
     {
         var npcCols = Physics2D.OverlapCircleAll(
-                transform.position + transform.right * _punchDistance,
+                _punchTransform.position,
                 0.15f,
                 nPCManager._interractLayer
             );
@@ -118,6 +114,6 @@ public class NPCPunchManager : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.right * _punchDistance, 0.15f);
+        Gizmos.DrawWireSphere(_punchTransform.position, 0.15f);
     }
 }
