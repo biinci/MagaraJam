@@ -24,6 +24,8 @@ public class NPCPunchManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(nPCManager.enabled);
+
         if (ChaosPoint > 10 && nPCManager.enabled == true)
         {
             NPCPunchManager npc = PunchableNPC();
