@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
+using UnityEngine.Rendering.Universal;
+
 public class NPCPointLogic : MonoBehaviour
 {
     [SerializeField] public AnimationData[] animationDatas;
@@ -23,8 +27,10 @@ public class NPCPointLogic : MonoBehaviour
     public float decreasingAmount;
     public int increasingAmount;
     public int maxAmount;
-
+    public AudioClip backgroundMusic;
+    
     private int totalChaos;
+    
     public int TotalChaos
     {
         get => totalChaos;
@@ -42,7 +48,15 @@ public class NPCPointLogic : MonoBehaviour
         }
     }
 
-    private void Start() => StartCoroutine(DecreasingChaos());
+    private void Start(){
+        SoundManager.Instance.PlaySound(backgroundMusic);
+        
+        
+        StartCoroutine(DecreasingChaos());
+        
+        
+    }
+
     private IEnumerator DecreasingChaos()
     {
         TotalChaos = 0;
@@ -51,6 +65,10 @@ public class NPCPointLogic : MonoBehaviour
             TotalChaos -= 1;
             yield return new WaitForSeconds(1 / decreasingAmount);
         }
+    }
+
+    private void Update(){
+        // Camera.main.transform.position = new Vector2(Camera.main.transform.position.x, 0.2f);
     }
 
     public IEnumerator OnEndGameCoroutine(bool didWin)

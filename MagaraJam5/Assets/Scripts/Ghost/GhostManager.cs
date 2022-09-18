@@ -15,7 +15,8 @@ public class GhostManager : MonoBehaviour
     [SerializeField] private TMP_Text captureBodyCountText;
     public bool shouldStartEndCoroutine;
     bool isStartedEndCoroutine;
-    private int captureBodyCount = 5;
+    private int captureBodyCount = 7;
+    public Transform clampUp, clampDown, clampLeft, clampRight;
     public int CaptureBodyCount
     {
         get => captureBodyCount;
@@ -30,7 +31,7 @@ public class GhostManager : MonoBehaviour
     private void Update()
     {
         AvailableNPC = FindAvailableNPC();
-        if (AvailableNPC != null && Input.GetKeyDown(KeyCode.E))
+        if (AvailableNPC != null && Input.GetKeyDown(KeyCode.E) && CaptureBodyCount > 0)
         {
             AvailableNPC.GetComponent<ConvertedNPCManager>().enabled = true;
         }
@@ -39,6 +40,9 @@ public class GhostManager : MonoBehaviour
             NPCPointLogic.Instance.StartCoroutine(NPCPointLogic.Instance.OnEndGameCoroutine(false));
             isStartedEndCoroutine = true;
         }
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, clampLeft.position.x, clampRight.position.x), Mathf.Clamp(transform.position.y, clampDown.position.y, clampUp.position.y));
+
     }
     private NPCManager FindAvailableNPC()
     {

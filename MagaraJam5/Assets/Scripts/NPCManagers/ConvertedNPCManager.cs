@@ -27,6 +27,7 @@ public class ConvertedNPCManager : MonoBehaviour
         nPCManager.enabled = false;
 
         nPCPunchManager = GetComponent<NPCPunchManager>();
+        nPCManager.anim.AddListener("PlayWalk", nPCManager.PlayWalk);
     }
 
 
@@ -37,7 +38,8 @@ public class ConvertedNPCManager : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(input * nPCManager._speed, 0);
 
         nPCManager.CheckAnimations();
-
+        
+        
         switch (input)
         {
             case < 0:
@@ -79,5 +81,6 @@ public class ConvertedNPCManager : MonoBehaviour
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = ghostManager.transform;
 
         nPCManager.enabled = true;
+        nPCManager.anim.RemoveListener("PlayWalk", nPCManager.PlayWalk);
     }
 }

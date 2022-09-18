@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using Cinemachine;
-using UnityEngine;
+
 
 public class LockCameraY : CinemachineExtension
 {
-    [Tooltip("Lock the camera's Z position to this value")]
     public float m_YPosition = 10;
+    
  
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam,

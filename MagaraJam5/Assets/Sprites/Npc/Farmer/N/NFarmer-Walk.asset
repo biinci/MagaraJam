@@ -29,7 +29,105 @@ MonoBehaviour:
     sprite: {fileID: 1005601982, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
   - SpriteId: 693a147bf8214374f81bc0fcdf470eef
     sprite: {fileID: 1789782172, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
-  layers: []
+  layers:
+  - frames:
+    - SpriteId: f4dcff427273e9e4fb062ff19669d4d7
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames:
+      - PlayWalk
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: e473066fb40a5f7419e2c864104865d1
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: 0010b9b11028e7a4db1f8837cda25e7a
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: 0b96942922f98bd4ca975992a1380fe5
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames:
+      - PlayWalk
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: 7c7b25c18c1486c44904fcf82ea8ea8d
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: 287b1e51cb815944c94d29a52867382c
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: 693a147bf8214374f81bc0fcdf470eef
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    activeBox: 1
+    onHandleTopLeft: 0
+    onHandleTopCenter: 0
+    onHandleTopRight: 0
+    onHandleRightCenter: 0
+    onHandleBottomRight: 0
+    onHandleBottomCenter: 0
+    onHandleBottomLeft: 0
+    onHandleLeftCenter: 0
+    onMiddle: 0
+    guid: 10f22ec938d36e246814b963f3cae43b
   references:
     version: 2
     RefIds: []

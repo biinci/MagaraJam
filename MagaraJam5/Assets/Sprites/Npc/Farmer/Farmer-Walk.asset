@@ -70,7 +70,8 @@ MonoBehaviour:
     - SpriteId: 5e39694f6e56049418ef82cd2569c657
       hitBoxData: []
       spriteData: []
-      spriteMethodNames: []
+      spriteMethodNames:
+      - PlayWalk
       hitBoxMethodNames: []
       colliderType: 1
       hitBoxRect:
@@ -106,7 +107,8 @@ MonoBehaviour:
     - SpriteId: 046f1528d7217bd46bb33f32f3c2968b
       hitBoxData: []
       spriteData: []
-      spriteMethodNames: []
+      spriteMethodNames:
+      - PlayWalk
       hitBoxMethodNames: []
       colliderType: 1
       hitBoxRect:

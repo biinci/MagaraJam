@@ -121,6 +121,7 @@ MonoBehaviour:
   anim: {fileID: 8600034460888146446}
   animData: {fileID: 0}
   canMove: 1
+  soundWalk: {fileID: 8300000, guid: 918c5767cdd27114ea93fd1fe22c9c47, type: 3}
 --- !u!114 &4311799681469759788
 MonoBehaviour:
   m_ObjectHideFlags: 0

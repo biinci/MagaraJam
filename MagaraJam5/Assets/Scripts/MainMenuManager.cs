@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,14 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private float transitionSpeed;
     [SerializeField] private RectTransform buttonsBackground;
-
+    public AudioClip menuMusic;
     private RectTransform currentObject;
     Vector3 firstPosition;
+
+    private void Start(){
+        SoundManager.Instance.PlaySound(menuMusic);
+    }
+
     IEnumerator OpenTabCoroutine(RectTransform openingObject)
     {
         if (currentObject == openingObject)
@@ -49,5 +55,7 @@ public class MainMenuManager : MonoBehaviour
     {
         StartCoroutine(OpenTabCoroutine(selectedObject));
     }
-    public void OnClick_Play() => UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    public void OnClick_Play(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
 }

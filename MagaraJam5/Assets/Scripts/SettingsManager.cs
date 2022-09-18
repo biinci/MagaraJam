@@ -7,7 +7,7 @@ public class SettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider effectsSlider;
-
+    
 
     public void OnChange_MusicSlider()
     {
@@ -16,5 +16,9 @@ public class SettingsManager : MonoBehaviour
     public void OnChange_EffectsSlider()
     {
         SoundManager.Instance.effectsSource.volume = effectsSlider.value;
+    }
+
+    public void Quit(){
+        Application.Quit();
     }
 }
