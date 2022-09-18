@@ -27,7 +27,7 @@ public class NPCManager : MonoBehaviour
     private Rigidbody2D _rb;
     public AnimationManager anim;
 
-    
+
     public AnimationData animData;
     public bool canMove = true;
     private int facingDirection;
@@ -43,6 +43,7 @@ public class NPCManager : MonoBehaviour
 
     private void Start()
     {
+        animData = NPCPointLogic.Instance.animationDatas[Random.Range(0, NPCPointLogic.Instance.animationDatas.Length)];
         _rb = GetComponent<Rigidbody2D>();
         CurrentDirection = (Direction)Random.Range(-1, 2);
 
@@ -58,7 +59,7 @@ public class NPCManager : MonoBehaviour
         anim.AddListener("To", SetAnimation);
 
         anim.SetProperty("Velocity", o => { _rb.velocity += (Vector2)o * facingDirection; });
-        anim.SetProperty("EqualVel", o => { _rb.velocity = (Vector2)o;});
+        anim.SetProperty("EqualVel", o => { _rb.velocity = (Vector2)o; });
     }
 
     private void Update()
@@ -92,15 +93,18 @@ public class NPCManager : MonoBehaviour
 
         return null;
     }
-    
+
 
     public void CheckRotations()
     {
-        if (canMove && anim.CurrentAnimation != animData.hurt) {
-            if (currentDirection == Direction.right) {
+        if (canMove && anim.CurrentAnimation != animData.hurt)
+        {
+            if (currentDirection == Direction.right)
+            {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            else if (currentDirection == Direction.left) {
+            else if (currentDirection == Direction.left)
+            {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
@@ -146,7 +150,7 @@ public class NPCManager : MonoBehaviour
 
     private void SetAnimation()
     {
-        
+
         switch (CurrentDirection)
         {
             case > 0 or < 0:
@@ -197,7 +201,8 @@ public class NPCManager : MonoBehaviour
     public void SetFacingDirection(int i)
     {
         facingDirection = i;
-        if (canMove && anim.CurrentAnimation != animData.hurt) {
+        if (canMove && anim.CurrentAnimation != animData.hurt)
+        {
 
             switch (i)
             {

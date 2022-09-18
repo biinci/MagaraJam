@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class NPCPointLogic : MonoBehaviour
 {
+    [SerializeField] public AnimationData[] animationDatas;
+
     #region Instance
     public static NPCPointLogic Instance;
     private void Awake()
