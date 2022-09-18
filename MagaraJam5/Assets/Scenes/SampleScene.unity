@@ -493,6 +493,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 48da49488b60efe4b82733c59f804bfd, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: a50d3b560ee3dfd40935220e3702bc3f, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
       objectReference: {fileID: 11400000, guid: 3639118c940b3584ba5ab13217fe705d, type: 2}
@@ -688,6 +692,10 @@ PrefabInstance:
       propertyPath: walk
       value: 
       objectReference: {fileID: 11400000, guid: 48da49488b60efe4b82733c59f804bfd, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: a50d3b560ee3dfd40935220e3702bc3f, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
@@ -1090,6 +1098,10 @@ PrefabInstance:
       propertyPath: walk
       value: 
       objectReference: {fileID: 11400000, guid: 48da49488b60efe4b82733c59f804bfd, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: a50d3b560ee3dfd40935220e3702bc3f, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
@@ -6188,6 +6200,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 250a7c4fa85312f4b911293700c7e823, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: f01c0702bf4fd8140ab6998cc5218917, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
       objectReference: {fileID: 11400000, guid: 1f05190142108a14f9cef497418eb74d, type: 2}
@@ -6551,6 +6567,10 @@ PrefabInstance:
       propertyPath: walk
       value: 
       objectReference: {fileID: 11400000, guid: 48da49488b60efe4b82733c59f804bfd, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: a50d3b560ee3dfd40935220e3702bc3f, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
@@ -11076,6 +11096,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: da6caf7a9d70e4d47964e686125a184f, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: 97bd324696da26242a55e0ea4a9ade9e, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 
       objectReference: {fileID: 11400000, guid: 9ce0b71007e98594ca603a5956402d0b, type: 2}
@@ -11130,6 +11154,14 @@ PrefabInstance:
     - target: {fileID: 2779545289439713701, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: m_Name
       value: NPC (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779545289439713702, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: m_Size.y
+      value: 0.45495653
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779545289439713702, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0042660236
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
@@ -11707,6 +11739,10 @@ PrefabInstance:
       propertyPath: walk
       value: 
       objectReference: {fileID: 11400000, guid: 197035a4b26b25e4fac7834e152f670c, type: 2}
+    - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
+      propertyPath: animData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f76f31e3f7f1cc49949d44d0f7c6c36, type: 2}
     - target: {fileID: 2779545289439713696, guid: cea25b56995a2e845a4a9cd825c5d731, type: 3}
       propertyPath: punchOne
       value: 

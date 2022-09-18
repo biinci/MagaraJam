@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b86238a0043e14cb2f0e6537d95214, type: 3}
+  m_Name: NFarmer
+  m_EditorClassIdentifier: 
+  walk: {fileID: 11400000, guid: da6caf7a9d70e4d47964e686125a184f, type: 2}
+  idle: {fileID: 11400000, guid: 810bbbb0059913940991438ca2ce9725, type: 2}
+  to: {fileID: 11400000, guid: 1f7b7745f8b13c34c94b1fc096413bb3, type: 2}
+  punchOne: {fileID: 11400000, guid: 9ce0b71007e98594ca603a5956402d0b, type: 2}
+  hurt: {fileID: 11400000, guid: 622bb13e5e158c340919890073d0e4e5, type: 2}

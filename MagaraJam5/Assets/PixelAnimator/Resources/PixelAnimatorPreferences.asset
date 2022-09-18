@@ -19,6 +19,9 @@ MonoBehaviour:
   - mainProperty:
       rid: 7165746366239997963
     propertyType: 0
+  - mainProperty:
+      rid: 7165746388050378764
+    propertyType: 0
   hitBoxProperties:
   - mainProperty:
       rid: 7165746366239997976
@@ -86,3 +89,11 @@ MonoBehaviour:
         fourTransactions: 0
         guid: 4e388e114fa6ec74da55a09b9f022599
         dataType: 0
+    - rid: 7165746388050378764
+      type: {class: ManuelProperty, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
+      data:
+        name: EqualVel
+        sourceName: 
+        fourTransactions: 0
+        guid: 96c28b50ef8a6c447bdd82c63c42b21a
+        dataType: 12

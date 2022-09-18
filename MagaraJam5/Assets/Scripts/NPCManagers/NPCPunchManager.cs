@@ -33,7 +33,7 @@ public class NPCPunchManager : MonoBehaviour
     }
     public IEnumerator PunchCoroutine()
     {
-        nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
+        nPCManager.anim.ChangeAnimation(nPCManager.animData.punchOne);
 
         canPunch = false;
         yield return new WaitForSeconds(0.25f);
@@ -57,12 +57,15 @@ public class NPCPunchManager : MonoBehaviour
             GetComponent<ConvertedNPCManager>().enabled = false;
         }
         isKnockbacking = true;
-
-        yield return new WaitForSeconds(1f);
+        var fall = nPCManager.animData.hurt;
+        nPCManager.anim.ChangeAnimation(fall);
+        
+        yield return new WaitForSeconds(fall.GetSpriteList().Count/12 + 0.4f);
 
         isKnockbacking = false;
         nPCManager.CurrentDirection = from.transform.position.x > transform.position.x ? Direction.right : Direction.left;
 
+        
     }
 
     private NPCPunchManager PunchableNPC()

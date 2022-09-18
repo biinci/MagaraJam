@@ -23,7 +23,7 @@ public class NPCManager : MonoBehaviour
     private Rigidbody2D _rb;
     public AnimationManager anim;
 
-    public PixelAnimation walk, idle, to, punchOne;
+    public AnimationData animData;
     public bool canMove = true;
     private int facingDirection;
     private Direction currentDirection;
@@ -53,6 +53,7 @@ public class NPCManager : MonoBehaviour
         anim.AddListener("To", SetAnimation);
 
         anim.SetProperty("Velocity", o => { _rb.velocity += (Vector2)o * facingDirection; });
+        anim.SetProperty("EqualVel", o => { _rb.velocity = (Vector2)o;});
     }
 
     private void Update()
@@ -115,7 +116,7 @@ public class NPCManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove && !GetComponent<NPCPunchManager>().isKnockbacking)
             _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
     }
 
@@ -125,13 +126,13 @@ public class NPCManager : MonoBehaviour
     {
         if (!canMove) return;
 
-        if (Mathf.Abs((int)CurrentDirection) > 0 && anim.CurrentAnimation == idle)
+        if (Mathf.Abs((int)CurrentDirection) > 0 && anim.CurrentAnimation == animData.idle)
         {
-            anim.ChangeAnimation(to);
+            anim.ChangeAnimation(animData.to);
         }
-        else if (CurrentDirection == Direction.none && anim.CurrentAnimation == walk)
+        else if (CurrentDirection == Direction.none && anim.CurrentAnimation == animData.walk)
         {
-            anim.ChangeAnimation(to);
+            anim.ChangeAnimation(animData.to);
         }
     }
 
@@ -140,10 +141,10 @@ public class NPCManager : MonoBehaviour
         switch (CurrentDirection)
         {
             case > 0 or < 0:
-                anim.ChangeAnimation(walk);
+                anim.ChangeAnimation(animData.walk);
                 break;
             case 0:
-                anim.ChangeAnimation(idle);
+                anim.ChangeAnimation(animData.idle);
                 break;
         }
     }
