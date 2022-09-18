@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCPointManager : MonoBehaviour
 {
     [SerializeField] private int chaosPoint;
-    [SerializeField] private SpriteRenderer angryIcon;
+    [SerializeField] public SpriteRenderer angryIcon;
 
     public int ChaosPoint
     {
