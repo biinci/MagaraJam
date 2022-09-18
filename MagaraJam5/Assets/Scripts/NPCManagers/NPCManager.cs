@@ -91,13 +91,13 @@ public class NPCManager : MonoBehaviour
 
     public void CheckRotations()
     {
-        if (currentDirection == Direction.right)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (currentDirection == Direction.left)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (canMove && anim.CurrentAnimation != animData.hurt) {
+            if (currentDirection == Direction.right) {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (currentDirection == Direction.left) {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
 
@@ -138,6 +138,7 @@ public class NPCManager : MonoBehaviour
 
     private void SetAnimation()
     {
+        
         switch (CurrentDirection)
         {
             case > 0 or < 0:
@@ -188,14 +189,17 @@ public class NPCManager : MonoBehaviour
     public void SetFacingDirection(int i)
     {
         facingDirection = i;
-        switch (i)
-        {
-            case > 0:
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
-            case < 0:
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-                break;
+        if (canMove && anim.CurrentAnimation != animData.hurt) {
+
+            switch (i)
+            {
+                case > 0:
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    break;
+                case < 0:
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                    break;
+            }
         }
     }
     private void OnDrawGizmosSelected()

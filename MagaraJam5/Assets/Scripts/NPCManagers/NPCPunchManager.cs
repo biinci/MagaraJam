@@ -57,6 +57,8 @@ public class NPCPunchManager : MonoBehaviour
             GetComponent<ConvertedNPCManager>().enabled = false;
         }
         isKnockbacking = true;
+        
+        nPCManager.transform.rotation = Quaternion.Euler(0, from.transform.position.x > transform.position.x ?  0 : 180, 0);
         var fall = nPCManager.animData.hurt;
         nPCManager.anim.ChangeAnimation(fall);
         
