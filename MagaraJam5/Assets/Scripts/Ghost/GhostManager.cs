@@ -13,7 +13,8 @@ public class GhostManager : MonoBehaviour
     [SerializeField] private LayerMask NPCLayer;
 
     [SerializeField] private TMP_Text captureBodyCountText;
-
+    public bool shouldStartEndCoroutine;
+    bool isStartedEndCoroutine;
     private int captureBodyCount = 5;
     public int CaptureBodyCount
     {
@@ -33,6 +34,11 @@ public class GhostManager : MonoBehaviour
         {
             AvailableNPC.GetComponent<ConvertedNPCManager>().enabled = true;
         }
+        if (shouldStartEndCoroutine && !isStartedEndCoroutine && NPCPointLogic.Instance.TotalChaos <= 0)
+        {
+            NPCPointLogic.Instance.StartCoroutine(NPCPointLogic.Instance.OnEndGameCoroutine(false));
+            isStartedEndCoroutine = true;
+        }
     }
     private NPCManager FindAvailableNPC()
     {
@@ -46,4 +52,5 @@ public class GhostManager : MonoBehaviour
         }
         return null;
     }
+
 }

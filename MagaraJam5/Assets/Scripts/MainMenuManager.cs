@@ -49,4 +49,5 @@ public class MainMenuManager : MonoBehaviour
     {
         StartCoroutine(OpenTabCoroutine(selectedObject));
     }
+    public void OnClick_Play() => UnityEngine.SceneManagement.SceneManager.LoadScene(1);
 }

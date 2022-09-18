@@ -37,7 +37,7 @@ public class ConvertedNPCManager : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(input * nPCManager._speed, 0);
 
         nPCManager.CheckAnimations();
-        
+
         switch (input)
         {
             case < 0:
@@ -71,6 +71,10 @@ public class ConvertedNPCManager : MonoBehaviour
         if (ghostManager == null) return;
 
         ghostManager.gameObject.SetActive(true);
+        if (ghostManager.CaptureBodyCount <= 0)
+        {
+            ghostManager.shouldStartEndCoroutine = true;
+        }
         ghostManager.transform.position = transform.position + new Vector3(0, 1f);
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = ghostManager.transform;
 
