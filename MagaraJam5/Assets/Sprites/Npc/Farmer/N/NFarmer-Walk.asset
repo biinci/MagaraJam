@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
+  m_Name: NFarmer-Walk
+  m_EditorClassIdentifier: 
+  loop: 1
+  frameRate: 12
+  pixelSprites:
+  - SpriteId: f4dcff427273e9e4fb062ff19669d4d7
+    sprite: {fileID: -82769939, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: e473066fb40a5f7419e2c864104865d1
+    sprite: {fileID: -1510028832, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: 0010b9b11028e7a4db1f8837cda25e7a
+    sprite: {fileID: -1269045457, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: 0b96942922f98bd4ca975992a1380fe5
+    sprite: {fileID: -696336384, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: 7c7b25c18c1486c44904fcf82ea8ea8d
+    sprite: {fileID: 808477055, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: 287b1e51cb815944c94d29a52867382c
+    sprite: {fileID: 1005601982, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  - SpriteId: 693a147bf8214374f81bc0fcdf470eef
+    sprite: {fileID: 1789782172, guid: 2ebd9072a0973a747aa37b47926fa871, type: 3}
+  layers: []
+  references:
+    version: 2
+    RefIds: []

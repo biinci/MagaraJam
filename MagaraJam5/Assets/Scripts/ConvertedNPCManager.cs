@@ -23,6 +23,7 @@ public class ConvertedNPCManager : MonoBehaviour
         NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
         nPCManager.CheckIcon();
         nPCManager.enabled = false;
+        
     }
 
 

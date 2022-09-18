@@ -93,7 +93,7 @@ MonoBehaviour:
       hitBoxRect:
         serializedVersion: 2
         x: 35
-        y: 23
+        y: 24
         width: 12
         height: 7
     - SpriteId: 79efc2b32dbf7b544a668806060c55fe
@@ -112,7 +112,7 @@ MonoBehaviour:
         y: 23
         width: 12
         height: 7
-    activeBox: 0
+    activeBox: 1
     onHandleTopLeft: 0
     onHandleTopCenter: 0
     onHandleTopRight: 0

@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
-  m_Name: Blacksmith-Punch
+  m_Name: NFarmer-Punch
   m_EditorClassIdentifier: 
   loop: 0
   frameRate: 12
   pixelSprites:
-  - SpriteId: 7095fdec9c64c584fae1fb9a82262461
-    sprite: {fileID: 275301898, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
-  - SpriteId: d7a56e62b2a2f9c4da6b4fb80e525a42
-    sprite: {fileID: -1536161829, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
-  - SpriteId: 5d81da74dcb707f44a0f741a0aa535bb
-    sprite: {fileID: 910584654, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
-  - SpriteId: 542ecd9d57288da46b091e08d38aebb9
-    sprite: {fileID: -1781391199, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
-  - SpriteId: e1a3d52a3aef28746ba0b6fb3a6a1a6e
-    sprite: {fileID: 899729325, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
-  - SpriteId: 566f0db857eccdc44ac105d0cc9ad79b
-    sprite: {fileID: 960239003, guid: 0d8a7fcf616a6fc4b858133120b90150, type: 3}
+  - SpriteId: 274d34db3f56e074281797e96a54b7b0
+    sprite: {fileID: -494753023, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
+  - SpriteId: e7611e4b9e479374eb6ae63b76c840b0
+    sprite: {fileID: 2045531720, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
+  - SpriteId: 824bd0070f056294f8c12ebf566b7462
+    sprite: {fileID: -1560006216, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
+  - SpriteId: 05c45b89cd58d584da7bcfed8b99657d
+    sprite: {fileID: -1815764412, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
+  - SpriteId: b17900fb444517e4ea42390632184b39
+    sprite: {fileID: -747752458, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
+  - SpriteId: 5b04305af31acdd4c9b77fc35c4dfe27
+    sprite: {fileID: 965678664, guid: 5f5fcdd63b7ca974db1053884ac68490, type: 3}
   layers:
   - frames:
-    - SpriteId: 7095fdec9c64c584fae1fb9a82262461
+    - SpriteId: 274d34db3f56e074281797e96a54b7b0
       hitBoxData: []
       spriteData:
       - baseData:
-          rid: 7165746388050378756
+          rid: 7165746388050378753
         dataType: 2
       spriteMethodNames: []
       hitBoxMethodNames: []
@@ -41,14 +41,14 @@ MonoBehaviour:
       hitBoxRect:
         serializedVersion: 2
         x: 29
-        y: 41
+        y: 39
         width: 4
-        height: 4
-    - SpriteId: d7a56e62b2a2f9c4da6b4fb80e525a42
+        height: 5
+    - SpriteId: e7611e4b9e479374eb6ae63b76c840b0
       hitBoxData: []
       spriteData:
       - baseData:
-          rid: 7165746388050378755
+          rid: 7165746388050378752
         dataType: 12
       spriteMethodNames: []
       hitBoxMethodNames: []
@@ -56,10 +56,10 @@ MonoBehaviour:
       hitBoxRect:
         serializedVersion: 2
         x: 29
-        y: 41
+        y: 39
         width: 4
-        height: 4
-    - SpriteId: 5d81da74dcb707f44a0f741a0aa535bb
+        height: 5
+    - SpriteId: 824bd0070f056294f8c12ebf566b7462
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -68,23 +68,10 @@ MonoBehaviour:
       hitBoxRect:
         serializedVersion: 2
         x: 29
-        y: 41
+        y: 39
         width: 4
-        height: 4
-    - SpriteId: 542ecd9d57288da46b091e08d38aebb9
-      hitBoxData: []
-      spriteData: []
-      spriteMethodNames: []
-      hitBoxMethodNames:
-      - Punch
-      colliderType: 1
-      hitBoxRect:
-        serializedVersion: 2
-        x: 35
-        y: 25
-        width: 11
-        height: 4
-    - SpriteId: e1a3d52a3aef28746ba0b6fb3a6a1a6e
+        height: 5
+    - SpriteId: 05c45b89cd58d584da7bcfed8b99657d
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -92,15 +79,27 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 35
-        y: 25
-        width: 12
-        height: 4
-    - SpriteId: 566f0db857eccdc44ac105d0cc9ad79b
+        x: 29
+        y: 39
+        width: 4
+        height: 5
+    - SpriteId: b17900fb444517e4ea42390632184b39
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 29
+        y: 39
+        width: 4
+        height: 5
+    - SpriteId: 5b04305af31acdd4c9b77fc35c4dfe27
       hitBoxData: []
       spriteData:
       - baseData:
-          rid: 7165746388050378757
+          rid: 7165746388050378754
         dataType: 2
       spriteMethodNames:
       - SetAnimation
@@ -108,10 +107,10 @@ MonoBehaviour:
       colliderType: 1
       hitBoxRect:
         serializedVersion: 2
-        x: 33
-        y: 25
-        width: 9
-        height: 4
+        x: 29
+        y: 39
+        width: 4
+        height: 5
     activeBox: 1
     onHandleTopLeft: 0
     onHandleTopCenter: 0
@@ -126,19 +125,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7165746388050378755
+    - rid: 7165746388050378752
       type: {class: Vector2Data, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
         name: Velocity
         guid: 5904c8f956f590b40af1ebff2df48a0a
         data: {x: 1, y: 0}
-    - rid: 7165746388050378756
+    - rid: 7165746388050378753
       type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
         name: CanMove
         guid: 567ff840260fac547a0c35d5b566ffe1
         data: 0
-    - rid: 7165746388050378757
+    - rid: 7165746388050378754
       type: {class: BoolData, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
         name: CanMove
