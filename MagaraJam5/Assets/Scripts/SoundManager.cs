@@ -18,4 +18,21 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void PlaySound(AudioClip clip){
+        effectsSource.PlayOneShot(clip);
+    }
+
+    public void ChangeMasterVolume(float value){
+        AudioListener.volume = value;
+    }
+
+    public void ToggleEffects(){
+        effectsSource.mute = !effectsSource.mute;
+    }
+    
+    public void ToggleMusic(){
+        musicSource.mute = !musicSource.mute;
+    }
+    
 }

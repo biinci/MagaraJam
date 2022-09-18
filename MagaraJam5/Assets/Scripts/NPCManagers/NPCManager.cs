@@ -33,6 +33,10 @@ public class NPCManager : MonoBehaviour
     private int facingDirection;
     private Direction currentDirection;
 
+    [Header("Sounds")] 
+    public AudioClip soundWalk;
+    
+
     public Direction CurrentDirection
     {
         get => currentDirection;
@@ -60,6 +64,7 @@ public class NPCManager : MonoBehaviour
 
         anim.SetProperty("Velocity", o => { _rb.velocity += (Vector2)o * facingDirection; });
         anim.SetProperty("EqualVel", o => { _rb.velocity = (Vector2)o; });
+        anim.AddListener("PlayWalk", PlayWalk);
     }
 
     private void Update()
@@ -220,7 +225,10 @@ public class NPCManager : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _interractDistance);
     }
 
-
+    private void PlayWalk(){
+        SoundManager.Instance.PlaySound(soundWalk);
+    }
+    
 }
 
 public enum Direction
