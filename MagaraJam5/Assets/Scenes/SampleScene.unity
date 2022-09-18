@@ -6048,6 +6048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaosBar: {fileID: 2096981127}
+  pointForBeingAgresivve: 10
   maxCaptureBodyCount: 10
   chaosPointPerPunch: 90
 --- !u!4 &616002994

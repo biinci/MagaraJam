@@ -5,6 +5,7 @@ using UnityEngine;
 public class ConvertedNPCManager : MonoBehaviour
 {
     private NPCManager nPCManager;
+    private NPCPunchManager nPCPunchManager;
     private GhostManager ghostManager;
     private static readonly int OutlineThickness = Shader.PropertyToID("_OutlineThickness");
     private float input;
@@ -12,6 +13,7 @@ public class ConvertedNPCManager : MonoBehaviour
     private void OnEnable()
     {
         GetComponent<SpriteRenderer>().material.SetFloat(OutlineThickness, 1);
+
         FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
 
         ghostManager = GhostManager.Instance;
@@ -23,7 +25,8 @@ public class ConvertedNPCManager : MonoBehaviour
         NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
         nPCManager.CheckIcon();
         nPCManager.enabled = false;
-        
+
+        nPCPunchManager = GetComponent<NPCPunchManager>();
     }
 
 
@@ -45,7 +48,6 @@ public class ConvertedNPCManager : MonoBehaviour
                 break;
         }
 
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             this.enabled = false;
@@ -53,8 +55,7 @@ public class ConvertedNPCManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<NPCPunchManager>().StartPunchCoroutine();
-            nPCManager.anim.ChangeAnimation(nPCManager.punchOne);
+            nPCPunchManager.StartCoroutine(nPCPunchManager.PunchCoroutine());
         }
     }
 

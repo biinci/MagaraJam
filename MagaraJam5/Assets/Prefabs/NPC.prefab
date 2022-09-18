@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2779545289439713697}
   - component: {fileID: 2779545289439713696}
   - component: {fileID: 4311799681469759788}
+  - component: {fileID: 5052227368151613796}
   - component: {fileID: 2262389240197931871}
   - component: {fileID: 2779545289439713703}
   - component: {fileID: 8600034460888146446}
@@ -133,10 +134,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67905cd2a0db958468973bb4c6a33974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaosPoint: 0
   _punchCooldown: 2
-  _punchKnockback: 3
   _punchTransform: {fileID: 7174575342812882174}
+  nPCManager: {fileID: 0}
+  nPCPointManager: {fileID: 0}
+  canPunch: 1
+  isKnockbacking: 0
+--- !u!114 &5052227368151613796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779545289439713701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ddae8c57437b84792858a754187ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaosPoint: 0
 --- !u!114 &2262389240197931871
 MonoBehaviour:
   m_ObjectHideFlags: 0
