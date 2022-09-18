@@ -117,6 +117,9 @@ public class NPCManager : MonoBehaviour
     public void CheckIcon()
     {
         enterNPCIcon.SetActive(GhostManager.Instance.AvailableNPC == this);
+        var renderer = enterNPCIcon.GetComponent<SpriteRenderer>();
+
+        renderer.flipX = transform.rotation.y != 0;
     }
 
     private void FixedUpdate()
