@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float transitionSpeed;
+    [SerializeField] private RectTransform buttonsBackground;
 
-    // Update is called once per frame
-    void Update()
+    private RectTransform currentObject;
+    Vector3 firstPosition;
+    IEnumerator OpenTabCoroutine(RectTransform openingObject)
     {
-        
+        if (currentObject == openingObject)
+        {
+            StartCoroutine(CloseTabCoroutine());
+            yield break;
+        }
+        if (currentObject != null)
+        {
+            yield return StartCoroutine(CloseTabCoroutine());
+        }
+        currentObject = openingObject;
+        firstPosition = currentObject.position;
+        while (openingObject.position != new Vector3(buttonsBackground.rect.width, Screen.height / 2))
+        {
+            currentObject.position = Vector2.MoveTowards(
+                currentObject.position,
+                new(buttonsBackground.rect.width, Screen.height / 2),
+                transitionSpeed * Time.deltaTime
+            );
+            yield return null;
+        }
+    }
+    IEnumerator CloseTabCoroutine()
+    {
+        while (currentObject.position != firstPosition)
+        {
+            currentObject.position = Vector2.MoveTowards(
+                currentObject.position,
+                firstPosition,
+                transitionSpeed * Time.deltaTime
+            );
+            yield return null;
+        }
+        currentObject = null;
+    }
+    public void OnClick_SelectObject(RectTransform selectedObject)
+    {
+        StartCoroutine(OpenTabCoroutine(selectedObject));
     }
 }
