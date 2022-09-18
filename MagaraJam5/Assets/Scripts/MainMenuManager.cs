@@ -12,7 +12,8 @@ public class MainMenuManager : MonoBehaviour
     Vector3 firstPosition;
 
     private void Start(){
-        SoundManager.Instance.PlaySound(menuMusic);
+        SoundManager.Instance.musicSource.clip = menuMusic;
+        SoundManager.Instance.musicSource.Play();
     }
 
     IEnumerator OpenTabCoroutine(RectTransform openingObject)

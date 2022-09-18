@@ -49,7 +49,8 @@ public class NPCPointLogic : MonoBehaviour
     }
 
     private void Start(){
-        SoundManager.Instance.PlaySound(backgroundMusic);
+        SoundManager.Instance.musicSource.clip = backgroundMusic;
+        SoundManager.Instance.musicSource.Play();
         
         
         StartCoroutine(DecreasingChaos());
