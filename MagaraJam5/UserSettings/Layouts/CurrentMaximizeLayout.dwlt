@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 43122
+  controlID: 44688
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 43123
+  controlID: 44689
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 43112
+  controlID: 44552
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 43113
+  controlID: 44553
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 262
     height: 590
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -248,9 +248,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ac36feff
+      m_SelectedIDs: 08710000
       m_LastClickedID: 0
-      m_ExpandedIDs: 26ecfeffa6effeffa613ffff3215ffffc246ffff024affff06fbffffa06d0000be6d000026bb0000
+      m_ExpandedIDs: 26ecfeffa6effeffa613ffff3215ffffc246ffff024affff06fbffffa06d0000be6d0000f8ba000026bb0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -550,9 +550,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.289716, y: -3.9153335, z: 0.06840687}
+    m_Target: {x: -11.125356, y: -3.7752752, z: 0.08913854}
     speed: 2
-    m_Value: {x: -6.289716, y: -3.9153335, z: 0.06840687}
+    m_Value: {x: -11.125356, y: -3.7752752, z: 0.08913854}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -603,9 +603,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.4873229
+    m_Target: 2.4924335
     speed: 2
-    m_Value: 1.4873229
+    m_Value: 2.4924335
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -767,21 +767,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Npc/Farmer/N
+    - Assets/Sprites/Npc/Farmer
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Sprites/Npc/Farmer/N
+  - Assets/Sprites/Npc/Farmer
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Msalih\Desktop\Unity denemeler\MagaraJam\MagaraJam5
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 14}
-    m_SelectedIDs: e6710000
-    m_LastClickedID: 29158
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: cc700000
+    m_LastClickedID: 28876
     m_ExpandedIDs: 000000008470000086700000887000008a7000008c7000008e70000090700000bc700000cc70000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -798,7 +798,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -835,10 +835,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ac36feff
-    m_LastClickedInstanceID: -117076
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000e6a60000baac0000c8af0000ba670000408b0000e68d00006ea1000088c700006c96000074db000076d10000
+    m_SelectedInstanceIDs: 08710000
+    m_LastClickedInstanceID: 28936
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000e6a60000baac0000c8af0000ba670000408b0000e68d00006ea1000088c700006c96000074db0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -854,7 +854,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
