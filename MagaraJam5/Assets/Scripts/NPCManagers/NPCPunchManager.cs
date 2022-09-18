@@ -6,7 +6,8 @@ public class NPCPunchManager : MonoBehaviour
 {
     [SerializeField] private float _punchCooldown;
     [SerializeField] private Transform _punchTransform;
-
+    [SerializeField] private float punchRadius;
+    
     [HideInInspector] public NPCManager nPCManager;
     [HideInInspector] public NPCPointManager nPCPointManager;
 
@@ -52,6 +53,9 @@ public class NPCPunchManager : MonoBehaviour
     {
         NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
         nPCManager.CurrentDirection = Direction.none;
+        if (nPCManager.enabled == false) {
+            GetComponent<ConvertedNPCManager>().enabled = false;
+        }
         isKnockbacking = true;
 
         yield return new WaitForSeconds(1f);
@@ -65,7 +69,7 @@ public class NPCPunchManager : MonoBehaviour
     {
         var npcCols = Physics2D.OverlapCircleAll(
                 _punchTransform.position,
-                0.15f,
+                punchRadius,
                 nPCManager._interractLayer
         );
 
@@ -82,6 +86,6 @@ public class NPCPunchManager : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_punchTransform.position, 0.15f);
+        Gizmos.DrawWireSphere(_punchTransform.position, punchRadius);
     }
 }

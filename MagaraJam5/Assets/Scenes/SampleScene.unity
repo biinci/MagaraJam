@@ -10535,7 +10535,7 @@ GameObject:
   - component: {fileID: 1145582858}
   - component: {fileID: 1145582859}
   m_Layer: 0
-  m_Name: NPCConversationManager
+  m_Name: NPCConversationSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

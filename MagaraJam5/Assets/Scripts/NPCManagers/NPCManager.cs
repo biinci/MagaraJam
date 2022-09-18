@@ -86,20 +86,7 @@ public class NPCManager : MonoBehaviour
 
         return null;
     }
-
-    public void CheckAnimations()
-    {
-        if (!canMove) return;
-
-        if (Mathf.Abs(_rb.velocity.x) > 0 && anim.CurrentAnimation == idle)
-        {
-            anim.ChangeAnimation(to);
-        }
-        else if (_rb.velocity.x == 0 && anim.CurrentAnimation == walk)
-        {
-            anim.ChangeAnimation(to);
-        }
-    }
+    
 
     public void CheckRotations()
     {
@@ -132,9 +119,25 @@ public class NPCManager : MonoBehaviour
             _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
     }
 
+    #region Animation
+
+    public void CheckAnimations()
+    {
+        if (!canMove) return;
+
+        if (Mathf.Abs((int)CurrentDirection) > 0 && anim.CurrentAnimation == idle)
+        {
+            anim.ChangeAnimation(to);
+        }
+        else if (CurrentDirection == Direction.none && anim.CurrentAnimation == walk)
+        {
+            anim.ChangeAnimation(to);
+        }
+    }
+
     private void SetAnimation()
     {
-        switch (_rb.velocity.x)
+        switch (CurrentDirection)
         {
             case > 0 or < 0:
                 anim.ChangeAnimation(walk);
@@ -144,7 +147,7 @@ public class NPCManager : MonoBehaviour
                 break;
         }
     }
-
+    #endregion
     private IEnumerator DirectionDeciderCoroutine()
     {
         while (true)

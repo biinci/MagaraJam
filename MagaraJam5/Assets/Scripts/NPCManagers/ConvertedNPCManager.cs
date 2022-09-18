@@ -37,14 +37,19 @@ public class ConvertedNPCManager : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(input * nPCManager._speed, 0);
 
         nPCManager.CheckAnimations();
-
+        
         switch (input)
         {
             case < 0:
+                nPCManager.CurrentDirection = Direction.left;
                 nPCManager.SetFacingDirection(-1);
                 break;
             case > 0:
+                nPCManager.CurrentDirection = Direction.right;
                 nPCManager.SetFacingDirection(1);
+                break;
+            case 0:
+                nPCManager.CurrentDirection = Direction.none;
                 break;
         }
 
