@@ -7,7 +7,7 @@ public class NPCPunchManager : MonoBehaviour
     [SerializeField] private float _punchCooldown;
     [SerializeField] private Transform _punchTransform;
     [SerializeField] private float punchRadius;
-    
+
     [HideInInspector] public NPCManager nPCManager;
     [HideInInspector] public NPCPointManager nPCPointManager;
 
@@ -41,8 +41,6 @@ public class NPCPunchManager : MonoBehaviour
         var punchableNPC = PunchableNPC();
         if (punchableNPC != null)
         {
-            bool isPlayer = !nPCManager.enabled;
-            nPCPointManager.TransferChaosPoint(punchableNPC.nPCPointManager, isPlayer);
             punchableNPC.StartCoroutine(punchableNPC.KnockbackCoroutine(this));
         }
 
@@ -53,17 +51,21 @@ public class NPCPunchManager : MonoBehaviour
     {
         NPCConversationSystem.Instance.LeaveNPCFromConversation(nPCManager);
         nPCManager.CurrentDirection = Direction.none;
-        if (nPCManager.enabled == false) {
+        if (nPCManager.enabled == false)
+        {
             GetComponent<ConvertedNPCManager>().enabled = false;
         }
+
         isKnockbacking = true;
-        
-        nPCManager.transform.rotation = Quaternion.Euler(0, from.transform.position.x > transform.position.x ?  0 : 180, 0);
+
+        nPCManager.transform.rotation = Quaternion.Euler(0, from.transform.position.x > transform.position.x ? 0 : 180, 0);
         var fall = nPCManager.animData.hurt;
         nPCManager.anim.ChangeAnimation(fall);
-        
-        yield return new WaitForSeconds(fall.GetSpriteList().Count/12 + 0.4f);
 
+        yield return new WaitForSeconds(fall.GetSpriteList().Count / 12 + 0.4f);
+
+        bool isPlayer = !from.nPCManager.enabled;
+        from.nPCPointManager.TransferChaosPoint(nPCPointManager, isPlayer);
         isKnockbacking = false;
         nPCManager.CurrentDirection = from.transform.position.x > transform.position.x ? Direction.right : Direction.left;
 
