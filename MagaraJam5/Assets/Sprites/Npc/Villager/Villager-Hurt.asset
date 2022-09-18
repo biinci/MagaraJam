@@ -10,46 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecc76e2fa67af4dabbf0f32c4e82debf, type: 3}
-  m_Name: NFarmer-Hurt
+  m_Name: Villager-Hurt
   m_EditorClassIdentifier: 
-  loop: 1
+  loop: 0
   frameRate: 12
   pixelSprites:
-  - SpriteId: e8b9f3f02b3371141aefeec6a9b75fc0
-    sprite: {fileID: -2081269652, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: f4e8c2989baf8864e88248cbd67c2229
-    sprite: {fileID: -1879002099, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: c3a0a29821eb4d44b9675bd29e78a64c
-    sprite: {fileID: 540983173, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: f5ea544be48f960498796674b443e741
-    sprite: {fileID: -2099804773, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: f8dd340ad004c5b4299a4bb3591c9a52
-    sprite: {fileID: 1865803884, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: be4feb7001c3fdb4096cec912a950c75
-    sprite: {fileID: 200172277, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 2dd83ceafc2e8cd40a1e2d15148f4e86
-    sprite: {fileID: -57772885, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 1076ecb448a3f1a4895d2c24b655fe4e
-    sprite: {fileID: 1682538916, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 1eb1f615a9b984840876457322f27f63
-    sprite: {fileID: -151818918, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 425adcb8e7a8e3f4a8026a400aea795e
-    sprite: {fileID: 120038845, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 2b4f81ee92958884ab898ee6e31faf93
-    sprite: {fileID: 894768646, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: 8f8cc9a315654094092834b6813ae870
-    sprite: {fileID: 1395261380, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: d3ff11641744cbd45a11009ec9c3b919
-    sprite: {fileID: -2036236042, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
-  - SpriteId: d29a90f8c3ac48d45a1d6f89c4f8dc60
-    sprite: {fileID: -1627478808, guid: 1136d184b3e6d5044a488718f6353772, type: 3}
+  - SpriteId: c80a01aec1302cc4ba9a91085f4fd2e9
+    sprite: {fileID: 1886391570, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 7194db0d0f3e54746978e08631aa9531
+    sprite: {fileID: 1933584291, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 4c0e5daa1cb565e4aa9570d14577b259
+    sprite: {fileID: 396652936, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 69a99795db263c444945c819e7d1d819
+    sprite: {fileID: 1807759292, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 5eb00da3c29e46342818e13b40cf6d2c
+    sprite: {fileID: -266128621, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 12804aaf776e6c94eac6dc4ee6083bbe
+    sprite: {fileID: 1744625373, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 0cf5e841d959fba4eb3248259fd630af
+    sprite: {fileID: 1576014804, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 04a3b2b7237200c4aab4f2fabbb68d5f
+    sprite: {fileID: 137553655, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: e0f6986984abcd54987f5c58e92e3f97
+    sprite: {fileID: -332076759, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: af8a1c78c50eca34aad153099c8d49e1
+    sprite: {fileID: -1691945912, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: db75955d5e25d1549a5e1804a72754bc
+    sprite: {fileID: -2073354707, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 4878ec0f0f5c3594997f7b3102a97e13
+    sprite: {fileID: -1611961500, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 29eeafa3110f5f34a8daee07e92ead8a
+    sprite: {fileID: 1133748134, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
+  - SpriteId: 68bcba28e1e05ed408d3608795852d94
+    sprite: {fileID: 1566971335, guid: ddaf0f8c425cf884293bac2924676cb9, type: 3}
   layers:
   - frames:
-    - SpriteId: e8b9f3f02b3371141aefeec6a9b75fc0
+    - SpriteId: c80a01aec1302cc4ba9a91085f4fd2e9
       hitBoxData: []
       spriteData:
       - baseData:
-          rid: 7165746388050378767
+          rid: 7165746388050378773
         dataType: 12
       spriteMethodNames: []
       hitBoxMethodNames: []
@@ -60,7 +60,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: f4e8c2989baf8864e88248cbd67c2229
+    - SpriteId: 7194db0d0f3e54746978e08631aa9531
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -72,7 +72,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: c3a0a29821eb4d44b9675bd29e78a64c
+    - SpriteId: 4c0e5daa1cb565e4aa9570d14577b259
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -84,7 +84,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: f5ea544be48f960498796674b443e741
+    - SpriteId: 69a99795db263c444945c819e7d1d819
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -96,7 +96,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: f8dd340ad004c5b4299a4bb3591c9a52
+    - SpriteId: 5eb00da3c29e46342818e13b40cf6d2c
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -108,7 +108,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: be4feb7001c3fdb4096cec912a950c75
+    - SpriteId: 12804aaf776e6c94eac6dc4ee6083bbe
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -120,7 +120,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 2dd83ceafc2e8cd40a1e2d15148f4e86
+    - SpriteId: 0cf5e841d959fba4eb3248259fd630af
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -132,7 +132,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 1076ecb448a3f1a4895d2c24b655fe4e
+    - SpriteId: 04a3b2b7237200c4aab4f2fabbb68d5f
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -144,7 +144,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 1eb1f615a9b984840876457322f27f63
+    - SpriteId: e0f6986984abcd54987f5c58e92e3f97
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -156,7 +156,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 425adcb8e7a8e3f4a8026a400aea795e
+    - SpriteId: af8a1c78c50eca34aad153099c8d49e1
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -168,7 +168,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 2b4f81ee92958884ab898ee6e31faf93
+    - SpriteId: db75955d5e25d1549a5e1804a72754bc
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -180,7 +180,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: 8f8cc9a315654094092834b6813ae870
+    - SpriteId: 4878ec0f0f5c3594997f7b3102a97e13
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -192,7 +192,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: d3ff11641744cbd45a11009ec9c3b919
+    - SpriteId: 29eeafa3110f5f34a8daee07e92ead8a
       hitBoxData: []
       spriteData: []
       spriteMethodNames: []
@@ -204,7 +204,7 @@ MonoBehaviour:
         y: 16
         width: 16
         height: 16
-    - SpriteId: d29a90f8c3ac48d45a1d6f89c4f8dc60
+    - SpriteId: 68bcba28e1e05ed408d3608795852d94
       hitBoxData: []
       spriteData: []
       spriteMethodNames:
@@ -231,7 +231,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7165746388050378767
+    - rid: 7165746388050378773
       type: {class: Vector2Data, ns: binc.PixelAnimator.PropertyData, asm: Assembly-CSharp}
       data:
         name: EqualVel

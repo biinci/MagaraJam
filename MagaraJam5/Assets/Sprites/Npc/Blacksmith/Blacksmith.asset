@@ -16,4 +16,4 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: 5f78d75749a046444b426d2e770bb218, type: 2}
   to: {fileID: 11400000, guid: 68a12982b4d479c4da23a574a3f236ad, type: 2}
   punchOne: {fileID: 11400000, guid: acfd3906cae7fd8489a349d37776fae7, type: 2}
-  hurt: {fileID: 11400000, guid: 622bb13e5e158c340919890073d0e4e5, type: 2}
+  hurt: {fileID: 11400000, guid: ba9985af584292f4387b2970f46fb6d8, type: 2}

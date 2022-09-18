@@ -5,12 +5,13 @@ using UnityEngine;
 public class NPCPointManager : MonoBehaviour
 {
     [SerializeField] private int chaosPoint;
+    
     public int ChaosPoint
     {
         get => chaosPoint;
         set
         {
-            NPCPointLogic.Instance.TotalChaos += value - chaosPoint;
+            NPCPointLogic.Instance.TotalChaos += NPCPointLogic.Instance.increasingAmount;
             chaosPoint = value;
         }
     }

@@ -15,6 +15,9 @@ public class NPCPointLogic : MonoBehaviour
     public int pointForBeingAgresivve;
     public int maxCaptureBodyCount;
     public int chaosPointPerPunch;
+    public float decreasingAmount;
+    public int increasingAmount;
+    public int maxAmount;
 
     private int totalChaos;
     public int TotalChaos
@@ -23,10 +26,21 @@ public class NPCPointLogic : MonoBehaviour
         set
         {
             totalChaos = value;
+            if (totalChaos < 0) totalChaos = 0;   
             Debug.Log(totalChaos);
-            chaosBar.fillAmount = (float)totalChaos / (float)(chaosPointPerPunch * maxCaptureBodyCount);
+            chaosBar.fillAmount = totalChaos / (float)maxAmount;
         }
     }
 
-    private void Start() => TotalChaos = 0;
+    private void Start() => StartCoroutine(DecreasingChaos());
+
+    
+    
+    private IEnumerator DecreasingChaos(){
+        TotalChaos = 0;
+        while (true) {
+            TotalChaos -= 1;
+            yield return new WaitForSeconds(1/decreasingAmount);
+        }
+    }
 }

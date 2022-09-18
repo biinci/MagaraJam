@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1136d184b3e6d5044a488718f6353772
+guid: 5abbef52a9de57546a9536a28712961b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NFarmer-Hurt_0
+      name: Blacksmith-Hurt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe0d800bbcb49c478195fcd535011d5
-      internalID: -2081269652
+      spriteID: 44db95127c88f33478925a635d1fdcc1
+      internalID: -1063825659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_1
+      name: Blacksmith-Hurt_1
       rect:
         serializedVersion: 2
         x: 64
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0576b88038ce95449582649a6d0f66b
-      internalID: -1879002099
+      spriteID: 0637147baa3a7c545a0965c28cb5e849
+      internalID: -1152189837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_2
+      name: Blacksmith-Hurt_2
       rect:
         serializedVersion: 2
         x: 128
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efc739b1c016a644e97f83c99cad05d3
-      internalID: 540983173
+      spriteID: 4fc6b530a38707b4b8571398b1c903ea
+      internalID: 427957618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_3
+      name: Blacksmith-Hurt_3
       rect:
         serializedVersion: 2
         x: 192
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1db1dc19dda55474aa4a49709f389558
-      internalID: -2099804773
+      spriteID: 8c7836e119b68464d9a1050a6b8efcb1
+      internalID: 1937314990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_4
+      name: Blacksmith-Hurt_4
       rect:
         serializedVersion: 2
         x: 256
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f7b3a5e70add74d9661d9fee5754eb
-      internalID: 1865803884
+      spriteID: 0e9f24ebf6de3de4c8f1a1e112c55e2d
+      internalID: -1601787870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_5
+      name: Blacksmith-Hurt_5
       rect:
         serializedVersion: 2
         x: 320
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfc408f872cc26146beac6a107e25a2f
-      internalID: 200172277
+      spriteID: 0f64fe5bf324ff1409bfc50e5fc61dee
+      internalID: 1790734274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_6
+      name: Blacksmith-Hurt_6
       rect:
         serializedVersion: 2
         x: 384
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 931cb954d0fd6ec44bacc06376f37d69
-      internalID: -57772885
+      spriteID: 0d091bbdd5516954b868113eca6ed6e2
+      internalID: -596444330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_7
+      name: Blacksmith-Hurt_7
       rect:
         serializedVersion: 2
         x: 448
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cb15acee68b2ed4ab54abc10010560a
-      internalID: 1682538916
+      spriteID: 6c702a8ed6b456a42859b7df62857d64
+      internalID: -753200409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_8
+      name: Blacksmith-Hurt_8
       rect:
         serializedVersion: 2
         x: 512
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92ca7f7690b5fc245870985af8daf44f
-      internalID: -151818918
+      spriteID: 2ed1bada7b259374dba4d2476e72139d
+      internalID: 472220066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_9
+      name: Blacksmith-Hurt_9
       rect:
         serializedVersion: 2
         x: 576
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b5690821a361c4ea058721e47e03d0
-      internalID: 120038845
+      spriteID: 8a6c8a37b251ccb4b88f9871e38c1eba
+      internalID: 2066911458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_10
+      name: Blacksmith-Hurt_10
       rect:
         serializedVersion: 2
         x: 640
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56351817be8d0814cb52f0210618015b
-      internalID: 894768646
+      spriteID: 40740e3fd6cc8f1409605ad8ceae3390
+      internalID: 226726653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_11
+      name: Blacksmith-Hurt_11
       rect:
         serializedVersion: 2
         x: 704
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79fae8dfa88ba6549933c01606a2d522
-      internalID: 1395261380
+      spriteID: 23184ff633c4053459d6e39d8cd1b6d4
+      internalID: -747612296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_12
+      name: Blacksmith-Hurt_12
       rect:
         serializedVersion: 2
         x: 768
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a58b9274cdacb641814f03c6920b093
-      internalID: -2036236042
+      spriteID: a06fcc6cb14e8e443a7542d55add671f
+      internalID: -2031441909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NFarmer-Hurt_13
+      name: Blacksmith-Hurt_13
       rect:
         serializedVersion: 2
         x: 832
@@ -391,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec2a74779966da2448a43fe039b9fa5e
-      internalID: -1627478808
+      spriteID: 17efbca3f9509dc4bbea3eee52aa6499
+      internalID: 919356200
       vertices: []
       indices: 
       edges: []
@@ -408,20 +408,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NFarmer-Hurt_0: -2081269652
-      NFarmer-Hurt_3: -2099804773
-      NFarmer-Hurt_10: 894768646
-      NFarmer-Hurt_13: -1627478808
-      NFarmer-Hurt_12: -2036236042
-      NFarmer-Hurt_11: 1395261380
-      NFarmer-Hurt_4: 1865803884
-      NFarmer-Hurt_5: 200172277
-      NFarmer-Hurt_7: 1682538916
-      NFarmer-Hurt_9: 120038845
-      NFarmer-Hurt_2: 540983173
-      NFarmer-Hurt_1: -1879002099
-      NFarmer-Hurt_8: -151818918
-      NFarmer-Hurt_6: -57772885
+      Blacksmith-Hurt_6: -596444330
+      Blacksmith-Hurt_3: 1937314990
+      Blacksmith-Hurt_8: 472220066
+      Blacksmith-Hurt_12: -2031441909
+      Blacksmith-Hurt_7: -753200409
+      Blacksmith-Hurt_0: -1063825659
+      Blacksmith-Hurt_1: -1152189837
+      Blacksmith-Hurt_10: 226726653
+      Blacksmith-Hurt_4: -1601787870
+      Blacksmith-Hurt_9: 2066911458
+      Blacksmith-Hurt_13: 919356200
+      Blacksmith-Hurt_11: -747612296
+      Blacksmith-Hurt_2: 427957618
+      Blacksmith-Hurt_5: 1790734274
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

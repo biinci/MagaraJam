@@ -27,7 +27,91 @@ MonoBehaviour:
     sprite: {fileID: -246454581, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
   - SpriteId: ecc439b6a17149345866eed486eaa401
     sprite: {fileID: -1528573506, guid: 5cb6d7e25e35b4247913389aee711ba6, type: 3}
-  layers: []
+  layers:
+  - frames:
+    - SpriteId: 2ce8f6d0791260c4b84e5bf3b3401c5f
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: fd251494fe7732a4b85b4e19e610cd16
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 16
+        height: 16
+    - SpriteId: db62348ad380d474b9fc831d45ff98b4
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 16
+        height: 16
+    - SpriteId: 7e9eb9c7c5f174b4abf69fd6b42b76e5
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 1
+      hitBoxRect:
+        serializedVersion: 2
+        x: 32
+        y: 19
+        width: 16
+        height: 16
+    - SpriteId: 626f98c2d5e48444f8cd159b69a3b5e7
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 0
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    - SpriteId: ecc439b6a17149345866eed486eaa401
+      hitBoxData: []
+      spriteData: []
+      spriteMethodNames: []
+      hitBoxMethodNames: []
+      colliderType: 0
+      hitBoxRect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+    activeBox: 1
+    onHandleTopLeft: 0
+    onHandleTopCenter: 0
+    onHandleTopRight: 0
+    onHandleRightCenter: 0
+    onHandleBottomRight: 0
+    onHandleBottomCenter: 0
+    onHandleBottomLeft: 0
+    onHandleLeftCenter: 0
+    onMiddle: 0
+    guid: 10f22ec938d36e246814b963f3cae43b
   references:
     version: 2
     RefIds: []

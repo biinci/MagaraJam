@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 public class NPCManager : MonoBehaviour
 {
     public float _speed;
+    public float chaosSpeedMultiplier;
+    public float Speed =>
+        chaosSpeedMultiplier *
+        (GetComponent<NPCPointManager>().ChaosPoint / (float)NPCPointLogic.Instance.chaosPointPerPunch) + _speed;
 
     [SerializeField] private float _interractDistance;
     public LayerMask _interractLayer;
@@ -23,6 +27,7 @@ public class NPCManager : MonoBehaviour
     private Rigidbody2D _rb;
     public AnimationManager anim;
 
+    
     public AnimationData animData;
     public bool canMove = true;
     private int facingDirection;
@@ -117,7 +122,7 @@ public class NPCManager : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove && !GetComponent<NPCPunchManager>().isKnockbacking)
-            _rb.velocity = new Vector2((int)CurrentDirection * _speed, _rb.velocity.y);
+            _rb.velocity = new Vector2((int)CurrentDirection * Speed, _rb.velocity.y);
     }
 
     #region Animation

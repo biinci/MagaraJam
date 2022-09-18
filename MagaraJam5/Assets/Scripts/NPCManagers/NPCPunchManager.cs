@@ -67,7 +67,6 @@ public class NPCPunchManager : MonoBehaviour
         isKnockbacking = false;
         nPCManager.CurrentDirection = from.transform.position.x > transform.position.x ? Direction.right : Direction.left;
 
-        
     }
 
     private NPCPunchManager PunchableNPC()

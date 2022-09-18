@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1.5
+  chaosSpeedMultiplier: 0.2
   _interractDistance: 0.3
   _interractLayer:
     serializedVersion: 2
@@ -117,10 +118,7 @@ MonoBehaviour:
   enterNPCIcon: {fileID: 9038212084550593745}
   leaveCooldown: 0
   anim: {fileID: 8600034460888146446}
-  walk: {fileID: 11400000, guid: 9d7aa62110a7b3441a5b39a04974ef49, type: 2}
-  idle: {fileID: 11400000, guid: 46d099032df952742b5c5765d1f9147b, type: 2}
-  to: {fileID: 11400000, guid: 787eafb629438aa4e9e121c2723618a1, type: 2}
-  punchOne: {fileID: 11400000, guid: ad40964d46c10dd4794ec094acb8be55, type: 2}
+  animData: {fileID: 0}
   canMove: 1
 --- !u!114 &4311799681469759788
 MonoBehaviour:
